@@ -25,8 +25,7 @@ public class WebappAg1Application {
 
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext s = new SpringApplicationBuilder(WebappAg1Application.class)
-				.run(args);
+		SpringApplication.run(WebappAg1Application.class, args);
 
 //		QueryTester queryTester = new QueryTester();
 //		queryTester.doQuery(s.getBean(EntityManager.class));
