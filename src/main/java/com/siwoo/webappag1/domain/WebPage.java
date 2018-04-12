@@ -39,7 +39,7 @@ public class WebPage {
     @Column(length = 700)
     private String description;
 
-    @Column(name="helps")
+    @Column(name="webpage_help")
     private String help;
 
     private String aim;
