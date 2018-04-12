@@ -12,6 +12,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+@Table(name = "tbl_category")
 @Setter @ToString(exclude = "topics")
 @Getter @Entity
 @EqualsAndHashCode(of={"id","name","URL"})
@@ -38,7 +39,7 @@ public class Category {
     private String description;
 
     private BasicTime basicTime;
-
+    @Column(name="urls")
     private URL url;
 
     @JsonIgnore

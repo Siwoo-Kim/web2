@@ -39,6 +39,7 @@ public class WebPage {
     @Column(length = 700)
     private String description;
 
+    @Column(name="helps")
     private String help;
 
     private String aim;
@@ -50,7 +51,8 @@ public class WebPage {
     @MapKeyColumn(name="img_name")
     @Column(name = "images")
     private Map<String,String> images = new HashMap<>();
-    
+
+    @Column(name="urls")
     private URL url;
 
     @JsonSerialize(using = JsonLocalDateTimeSerializer.class)
