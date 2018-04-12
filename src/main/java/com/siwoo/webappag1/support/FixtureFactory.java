@@ -15,7 +15,7 @@ public class FixtureFactory {
 
     public static List<Topic> javaTopics(Category category, String hostname, int port) {
         List<Topic> topics = new ArrayList<>();
-        try{
+
             Topic topic = new Topic();
             topic.setName("변수");
             topic.setCategory(category);
@@ -28,7 +28,7 @@ public class FixtureFactory {
                             new Document("Null","변수는 코드의 재활용성을 높여준다. 예를 들어서 100에 10을 더하고, 10을 나눈 후에 다시 10을 빼고 거기에 10을 곱해야 한다고 치자. 그리고 각 단계마다 그 결과를 출력해야 한다면 코드는 아래와 같을 것이다.System.out.println(100 + 10);\n" + "System.out.println((100 + 10) / 10);\n" + "System.out.println(((100 + 10) / 10) - 10);\n" + "System.out.println((((100 + 10) / 10) - 10) * 10);"))
             );
             topic.setBasicTime(new BasicTime(LocalDateTime.of(2018,04,10,1,10,10), null));
-            topic.setReferences(Arrays.asList(new URL("http", hostname, port, "/language/" )));
+//            topic.setReferences(Arrays.asList(new URL("http", hostname, port, "/language/" )));
             topics.add(topic);
 
             topic = new Topic();
@@ -42,9 +42,7 @@ public class FixtureFactory {
                             new Document("세미콜론","세미콜론은 문장(statement)의 끝을 의미한다. 자바에서는 문장의 끝에 세미콜론을 사용하지 않으면 컴파일 에러가 발생한다. \n" + "\n" + "1\n" + "2\n" + "3\n" + "4\n" + "5\n" + "6\n" + "7\n" + "8\n" + "// assignment statement\n" + "aValue = 8933.234;\n" + "// increment statement\n" + "aValue++;\n" + "// method invocation statement\n" + "System.out.println(\"Hello World!\");\n" + "// object creation statement\n" + "Bicycle myBike = new Bicycle();\n" + "세미콜론을 이용하면 여러개의 문장을 한줄에 표현할 수 있다.\n" + "\n" + "1\n" + "int a = 100; double b = 10.1;")));
             topic.setBasicTime(new BasicTime(LocalDateTime.of(2018,4,10,7,10,32), null));
             topics.add(topic);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+
         return topics;
     }
 

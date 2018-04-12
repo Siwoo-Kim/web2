@@ -33,7 +33,7 @@ public class Topic {
     @CollectionTable(
             name="topic_references",
             joinColumns = @JoinColumn(name="id"))
-    @OrderColumn(name="ref_idx")
+    @OrderColumn(name="ref_idx_col")
     List<URL> references = new ArrayList<>();
     @Column(name ="topic_rate")
     private Double rate = 0.0;
