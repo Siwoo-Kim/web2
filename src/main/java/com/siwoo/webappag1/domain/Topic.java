@@ -35,8 +35,11 @@ public class Topic {
             joinColumns = @JoinColumn(name="topic_id"))
     @OrderColumn(name="ref_idx")
     List<URL> references = new ArrayList<>();
+    @Column(name ="topic_rate")
     private Double rate = 0.0;
+    @Column(name ="topic_hit")
     private Integer hit = 0;
+    @Column(name ="topic_lickes")
     private Integer likes = 0;
     private BasicTime basicTime;
 
