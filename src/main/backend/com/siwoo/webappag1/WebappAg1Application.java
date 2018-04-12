@@ -31,4 +31,5 @@ public class WebappAg1Application {
 //		QueryTester queryTester = new QueryTester();
 //		queryTester.doQuery(s.getBean(EntityManager.class));
 	}
+
 }
