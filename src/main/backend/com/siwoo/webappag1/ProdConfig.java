@@ -9,8 +9,6 @@ import org.springframework.context.annotation.Profile;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-@Slf4j
-@Profile("prod")
 @Configuration
 public class ProdConfig {
 
@@ -29,7 +27,6 @@ public class ProdConfig {
         return basicDataSource;
 
         }catch (URISyntaxException e) {
-            log.error(e.getMessage());
             e.printStackTrace();
             throw new RuntimeException(e);
         }
