@@ -39,7 +39,7 @@ public class Topic {
     private Double rate = 0.0;
     @Column(name ="topic_hit")
     private Integer hit = 0;
-    @Column(name ="topic_lickes")
+    @Column(name ="topic_likes")
     private Integer likes = 0;
     private BasicTime basicTime;
 

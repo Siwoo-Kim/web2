@@ -42,6 +42,7 @@ public class WebPage {
     @Column(name="webpage_help")
     private String help;
 
+    @Column(name="webpage_aim")
     private String aim;
 
 
