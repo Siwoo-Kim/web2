@@ -31,9 +31,9 @@ public class Topic {
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(
-            name="topic_references",
+            name="tbl_topic_references",
             joinColumns = @JoinColumn(name="id"))
-    @OrderColumn(name="ref_idx_col")
+    @OrderColumn(name="col_idx")
     List<URL> references = new ArrayList<>();
     @Column(name ="topic_rate")
     private Double rate = 0.0;
