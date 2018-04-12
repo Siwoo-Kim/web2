@@ -90,12 +90,12 @@ public class FixtureFactory {
             webPage.setBasicTime(new BasicTime(LocalDateTime.of(2018, 04, 9, 2, 17, 0), LocalDateTime.of(2018, 04, 9, 2, 17, 0)));
             webPage.setUrl(new URL("http", hostname, port, "/" + webPage.getName()));
             Map<String,String> images = new HashMap<>();
-            images.put("name","/assets/img/webPage/name.png");
-            images.put("introduction","/assets/img/webPage/introduction.png");
-            images.put("greeting","/assets/img/webPage/greeting.png");
-            images.put("description","/assets/img/webPage/5555.png");
-            images.put("aim","/assets/img/webPage/aim.png");
-            images.put("help","/assets/img/webPage/help.png");
+            images.put("name","/assets/img/webpage/name.png");
+            images.put("introduction","/assets/img/webpage/introduction.png");
+            images.put("greeting","/assets/img/webpage/greeting.png");
+            images.put("description","/assets/img/webpage/5555.png");
+            images.put("aim","/assets/img/webpage/aim.png");
+            images.put("help","/assets/img/webpage/help.png");
             webPage.setImages(images);
             webPages.add(webPage);
 
@@ -109,12 +109,12 @@ public class FixtureFactory {
             webPage.setBasicTime(new BasicTime(LocalDateTime.of(2018, 04, 9, 4, 17, 0), LocalDateTime.of(2018, 04, 9, 6, 36, 40)));
             webPage.setUrl(new URL("http", hostname, port, "/" + webPage.getName()));
             images = new HashMap<>();
-            images.put("name","/assets/img/webPage/name.png");
-            images.put("introduction","/assets/img/webPage/introduction.png");
-            images.put("greeting","/assets/img/webPage/greeting.png");
-            images.put("description","/assets/img/webPage/5555.png");
-            images.put("aim","/assets/img/webPage/aim.png");
-            images.put("help","/assets/img/webPage/help.png");
+            images.put("name","/assets/img/webpage/name.png");
+            images.put("introduction","/assets/img/webpage/introduction.png");
+            images.put("greeting","/assets/img/webpage/greeting.png");
+            images.put("description","/assets/img/webpage/5555.png");
+            images.put("aim","/assets/img/webpage/aim.png");
+            images.put("help","/assets/img/webpage/help.png");
             webPage.setImages(images);
             webPages.add(webPage);
 
