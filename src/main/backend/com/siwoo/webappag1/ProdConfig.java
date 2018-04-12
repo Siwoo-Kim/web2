@@ -2,12 +2,14 @@ package com.siwoo.webappag1;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 
 @Profile("prod")
+@Configuration
 public class ProdConfig {
 
     @Bean
