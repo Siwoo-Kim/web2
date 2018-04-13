@@ -1,5 +1,6 @@
 package com.siwoo.webappag1.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.siwoo.webappag1.domain.embedded.BasicTime;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity @Table(name="tbl_topic")
-@Getter @Setter @ToString
+@Getter @Setter @ToString(exclude = "documents")
 public class Topic {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,12 +20,19 @@ public class Topic {
     private String name;
     private String description;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(
-        name="topic_documents",
-        joinColumns = @JoinColumn(name="topic_id"))
+    @JsonIgnore
+    @OneToMany(mappedBy = "topic",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Document> documents = new ArrayList<>();
 
+    public void addDocument(Document document) {
+        if(document.getTopic() != this) {
+            document.setTopic(this);
+        }
+        if(!documents.contains(document)) {
+            this.documents.add(document);
+        }
+    }
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="category_id")
     private Category category;
@@ -35,6 +43,7 @@ public class Topic {
             joinColumns = @JoinColumn(name="id"))
     @OrderColumn(name="col_idx")
     List<URL> references = new ArrayList<>();
+
     @Column(name ="topic_rate")
     private Double rate = 0.0;
     @Column(name ="topic_hit")

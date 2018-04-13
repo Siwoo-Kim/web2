@@ -30891,8 +30891,8 @@ $.fn.search.settings = {
 
             html  += '<div class="category">';
 
-            if(category[fields.categoryName] !== undefined) {
-              html += '<div class="name">' + category[fields.categoryName] + '</div>';
+            if(category[fields.categoryId] !== undefined) {
+              html += '<div class="name">' + category[fields.categoryId] + '</div>';
             }
 
             // each item inside category

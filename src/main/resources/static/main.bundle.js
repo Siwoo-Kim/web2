@@ -37,23 +37,35 @@ module.exports = "\n\n<mat-sidenav-container>\n  <mat-sidenav #sidenav>\n    <di
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_locale_resolver_service__ = __webpack_require__("./src/app/service/locale-resolver.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.title = 'app';
+    function AppComponent(localeResolver) {
+        this.localeResolver = localeResolver;
     }
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.localeResolver.getLocale().subscribe(function (locale) {
+            _this.locale = locale;
+        });
+    };
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-root',
             template: __webpack_require__("./src/app/app.component.html"),
             styles: [__webpack_require__("./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__service_locale_resolver_service__["a" /* LocaleResolver */]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -246,6 +258,147 @@ var ContactComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/language/category-list/category-list.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "\r\nmat-nav-list {\r\n  margin-top: 40px;\r\n}\r\nmat-accordion {\r\n}\r\nmat-expansion-panel {\r\n  background: rgba(0,0,0,.03);\r\n  margin: 0;\r\n  text-align: left;\r\n  background: none;\r\n  border: none;\r\n\r\n}\r\n.category-list {\r\n  border-right: 2px solid #3f51b5;\r\n  padding-right: 25px;\r\n}\r\nbutton.mat-menu-item {\r\n  min-width: 250px;\r\n  width: 100%;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/language/category-list/category-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<mat-accordion  >\n  <mat-expansion-panel\n    *ngFor=\"let category of categories\"\n    (opened)=\"panelOpenState = true\"\n    (closed)=\"panelOpenState = false\">\n    <mat-expansion-panel-header style=\"text-align: center\">\n      <mat-panel-title>\n        {{ category?.name }}\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n    <mat-list>\n      <mat-list-item>\n        <a [routerLink]=\"['/language',category.name]\" [queryParams]=\"{categoryId: category.id }\">{{ category.name }} Overview</a>\n      </mat-list-item>\n      <mat-list-item *ngFor=\"let topic of category?.topics\">\n        <a [routerLink]=\"['/language',category.name]\" >{{ topic?.name }}</a>\n      </mat-list-item>\n    </mat-list>\n  </mat-expansion-panel>\n</mat-accordion>\n"
+
+/***/ }),
+
+/***/ "./src/app/language/category-list/category-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_category_repository_service__ = __webpack_require__("./src/app/service/category-repository.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_WebPage_model__ = __webpack_require__("./src/app/model/WebPage.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_topic_repository_service__ = __webpack_require__("./src/app/service/topic-repository.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var CategoryListComponent = /** @class */ (function () {
+    function CategoryListComponent(categoryRepository, topicRepository) {
+        this.categoryRepository = categoryRepository;
+        this.topicRepository = topicRepository;
+        this.categories = [];
+        this.panelOpenState = false;
+    }
+    CategoryListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.categoryRepository.getByWebPage(this.webPage)
+            .subscribe(function (_category) {
+            _this.categories.push(_category);
+            _this.categories.forEach(function (_category) {
+                _this.topicRepository.getTopicsByCategory(_category).subscribe(function (_topics) {
+                    _category.topics = _topics;
+                });
+            });
+        });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__model_WebPage_model__["a" /* WebPage */])
+    ], CategoryListComponent.prototype, "webPage", void 0);
+    CategoryListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'sw-category-list',
+            template: __webpack_require__("./src/app/language/category-list/category-list.component.html"),
+            styles: [__webpack_require__("./src/app/language/category-list/category-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__service_category_repository_service__["a" /* CategoryRepository */],
+            __WEBPACK_IMPORTED_MODULE_3__service_topic_repository_service__["a" /* TopicRepository */]])
+    ], CategoryListComponent);
+    return CategoryListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/language/category-main/category-main.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "\r\n\r\n\r\nmat-tab-header {\r\n  min-width: 72px;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/language/category-main/category-main.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<div  style=\"width: 100%\" fxLayoutAlign=\"center center\" style=\"margin: 45px;\">\n  <div class=\"tab-container\" >\n    <mat-tab-group [dynamicHeight]=\"false\">\n      <mat-tab >\n        <ng-template mat-tab-label >\n          <h1 class=\"ui header\">\n            Overview\n          </h1>\n        </ng-template>\n        <div class=\"ui text column text-content-wrapper mt-5\">\n          <h4 class=\"ui header\" >\n            <i class=\"tag icon\"></i>\n            {{ category?.name }}\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui left floated header\" style=\"padding-left: 40px !important;\"> {{ category?.name }} 이란? </h2>\n          <p>\n            {{ category?.description }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            Introduction\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui right floated header\"> {{category?.name}}의 수업은? </h2>\n          <p>\n            {{ category?.introduction }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            난이도\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui right floated header\"> 얼마나 어려워요? </h2>\n          <p>\n            {{ category?.level }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            사전 공부\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui left floated header\"> 전에 뭘 공부해야되죠?</h2>\n          <p>\n            {{ category?.prerequisite }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            Help\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui left floated header\"> 도움은 ?</h2>\n          <p>\n            {{ category?.url }}\n          </p>\n        </div>\n      </mat-tab>\n      <mat-tab >\n        <ng-template mat-tab-label >\n          <h1 class=\"ui header\">\n            Code\n          </h1>\n        </ng-template>\n        <div class=\"ui text column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\" >\n            <i class=\"tag icon\"></i>\n            Welcome to TryCode\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui left floated header\" style=\"padding-left: 40px !important;\"> {{ webpage?.name }}</h2>\n          <p>\n            {{ webpage?.greeting }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            Introduction\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui right floated header\"> 이 페이지는 ? </h2>\n          <p>\n            {{ webpage?.introduction }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            Aim\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui left floated header\"> 설명 좀 해봐 ?</h2>\n          <p>\n            {{ webpage?.description }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            Aim\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui right floated header\"> 그래서 어떻게 되는데 ?</h2>\n          <p>\n            {{ webpage?.aim }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            Help\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui left floated header\"> 도움은 ?</h2>\n          <p>\n            {{ webpage?.help }}\n          </p>\n        </div>\n      </mat-tab>\n    </mat-tab-group>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/language/category-main/category-main.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryMainComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_category_repository_service__ = __webpack_require__("./src/app/service/category-repository.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CategoryMainComponent = /** @class */ (function () {
+    function CategoryMainComponent(route, categoryRepository) {
+        var _this = this;
+        this.route = route;
+        this.categoryRepository = categoryRepository;
+        this.route.queryParams.subscribe(function (params) {
+            _this.categoryId = params['categoryId'];
+            _this.categoryRepository.getCategory(_this.categoryId).subscribe(function (_category) {
+                _this.category = _category;
+                console.log(_this.category);
+            });
+        });
+    }
+    CategoryMainComponent.prototype.ngOnInit = function () {
+    };
+    CategoryMainComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-category-main',
+            template: __webpack_require__("./src/app/language/category-main/category-main.component.html"),
+            styles: [__webpack_require__("./src/app/language/category-main/category-main.component.css")],
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* ViewEncapsulation */].None,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__service_category_repository_service__["a" /* CategoryRepository */]])
+    ], CategoryMainComponent);
+    return CategoryMainComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/language/category-table/category-table.component.css":
 /***/ (function(module, exports) {
 
@@ -293,7 +446,7 @@ var CategoryTableComponent = /** @class */ (function () {
         this.categoryRepository.getByWebPage(this.webPage)
             .subscribe(function (data) {
             _this.categories.push(data);
-            _this.dataSource = new __WEBPACK_IMPORTED_MODULE_1__angular_material__["k" /* MatTableDataSource */](_this.categories);
+            _this.dataSource = new __WEBPACK_IMPORTED_MODULE_1__angular_material__["l" /* MatTableDataSource */](_this.categories);
         });
     };
     CategoryTableComponent.prototype.applyFilter = function (filterValue) {
@@ -320,28 +473,27 @@ var CategoryTableComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/language/language-category/category-list.component.css":
+/***/ "./src/app/language/language-default/language-default.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "\r\nmat-nav-list {\r\n  margin-top: 40px;\r\n}\r\n\r\n.category-list {\r\n  border-right: 2px solid #3f51b5;\r\n  padding-right: 25px;\r\n}\r\n\r\nbutton.mat-menu-item {\r\n  min-width: 250px;\r\n  width: 100%;\r\n}\r\n"
+module.exports = ""
 
 /***/ }),
 
-/***/ "./src/app/language/language-category/category-list.component.html":
+/***/ "./src/app/language/language-default/language-default.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<mat-nav-list class=\"text container\"\n              fxLayout\n              fxLayoutAlign=\"center\"\n              fxFlexOffset=\"5%\">\n  <div fxFlex=\"100%\"\n       mat-list-item\n       class=\"category-list item active\" >\n    <a fxFlex=\"100%\"\n       *ngFor=\"let category of categories\"\n       mat-button\n       [matMenuTriggerFor]=\"menu\"\n       class=\"ui secondary pointing menu\">\n      <a  mat-list-item >{{ category?.name }}</a>\n      <mat-menu #menu=\"matMenu\">\n        <a mat-list-item><button  mat-menu-item>Document1</button></a>\n        <a mat-list-item><button  mat-menu-item>Document2</button></a>\n      </mat-menu>\n    </a>\n  </div>\n</mat-nav-list>\n\n"
+module.exports = "<div class=\"ui container\" style=\"margin: 20px;padding: 15px;max-height: 500px;\" >\n  <sw-category-table\n    *ngIf=\"webPage\"\n    [webPage]=\"webPage\"></sw-category-table>\n</div>\n<sw-webpage [webpage]=\"webPage\"></sw-webpage>\n"
 
 /***/ }),
 
-/***/ "./src/app/language/language-category/category-list.component.ts":
+/***/ "./src/app/language/language-default/language-default.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryListComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LanguageDefaultComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_category_repository_service__ = __webpack_require__("./src/app/service/category-repository.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_WebPage_model__ = __webpack_require__("./src/app/model/WebPage.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_webpage_repository_service__ = __webpack_require__("./src/app/service/webpage-repository.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -353,30 +505,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-var CategoryListComponent = /** @class */ (function () {
-    function CategoryListComponent(categoryRepository) {
-        this.categoryRepository = categoryRepository;
-        this.categories = [];
+var LanguageDefaultComponent = /** @class */ (function () {
+    function LanguageDefaultComponent(webPageRepository) {
+        this.webPageRepository = webPageRepository;
+        this.WEBPAGE_NAME = 'language';
+        this.dataLoaded = false;
     }
-    CategoryListComponent.prototype.ngOnInit = function () {
+    LanguageDefaultComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.categoryRepository.getByWebPage(this.webPage)
-            .subscribe(function (data) { return _this.categories.push(data); });
+        this.dataLoaded = false;
+        this.webPageRepository.getByName(this.WEBPAGE_NAME).subscribe(function (_webPage) {
+            _this.webPage = _webPage;
+            _this.dataLoaded = true;
+        });
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__model_WebPage_model__["a" /* WebPage */])
-    ], CategoryListComponent.prototype, "webPage", void 0);
-    CategoryListComponent = __decorate([
+    LanguageDefaultComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'sw-category-list',
-            template: __webpack_require__("./src/app/language/language-category/category-list.component.html"),
-            styles: [__webpack_require__("./src/app/language/language-category/category-list.component.css")]
+            selector: 'app-language-default',
+            template: __webpack_require__("./src/app/language/language-default/language-default.component.html"),
+            styles: [__webpack_require__("./src/app/language/language-default/language-default.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__service_category_repository_service__["a" /* CategoryRepository */]])
-    ], CategoryListComponent);
-    return CategoryListComponent;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__service_webpage_repository_service__["a" /* WebpageRepository */]])
+    ], LanguageDefaultComponent);
+    return LanguageDefaultComponent;
 }());
 
 
@@ -386,14 +537,14 @@ var CategoryListComponent = /** @class */ (function () {
 /***/ "./src/app/language/language-main/language-main.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "a {\r\n  text-align: center;\r\n}\r\n"
+module.exports = "a {\r\n  text-align: center;\r\n}\r\n\r\n:host {\r\n  min-height: 900px;\r\n}\r\n"
 
 /***/ }),
 
 /***/ "./src/app/language/language-main/language-main.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<sw-spinner [hide]=\"dataLoaded\"></sw-spinner>\n<div fxLayout style=\"margin-top: 20px\">\n  <sw-category-list *ngIf=\"webPage\"\n                    [webPage]=\"webPage\"\n                    fxFlex=\"20%\"\n                    fxShow.lt-md=\"false\"></sw-category-list>\n  <div fxFlex=\"80%\" fxFlex.lt-md=\"100%\"  >\n    <div class=\"ui container\" style=\"margin: 20px;padding: 15px;max-height: 500px;\" >\n      <sw-category-table\n        *ngIf=\"webPage\"\n        [webPage]=\"webPage\"></sw-category-table>\n    </div>\n    <sw-webpage [webpage]=\"webPage\"></sw-webpage>\n  </div>\n</div>\n"
+module.exports = "\n<sw-spinner [hide]=\"dataLoaded\"></sw-spinner>\n<div fxLayout style=\"margin-top: 20px\">\n  <sw-category-list *ngIf=\"webPage\"\n                    [webPage]=\"webPage\"\n                    fxFlex=\"20%\"\n                    style=\"padding-left: 15px;margin-top: 30px\"\n                    fxShow.lt-md=\"false\"></sw-category-list>\n  <div fxFlex=\"75%\" fxFlex.lt-md=\"100%\"  >\n    <router-outlet ></router-outlet>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -453,14 +604,20 @@ var LanguageMainComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__language_main_language_main_component__ = __webpack_require__("./src/app/language/language-main/language-main.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_shared_shared_module__ = __webpack_require__("./src/app/shared/shared/shared.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__language_category_category_list_component__ = __webpack_require__("./src/app/language/language-category/category-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__category_list_category_list_component__ = __webpack_require__("./src/app/language/category-list/category-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__category_table_category_table_component__ = __webpack_require__("./src/app/language/category-table/category-table.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__language_default_language_default_component__ = __webpack_require__("./src/app/language/language-default/language-default.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__category_main_category_main_component__ = __webpack_require__("./src/app/language/category-main/category-main.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -475,11 +632,14 @@ var LanguageModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
                 __WEBPACK_IMPORTED_MODULE_3__shared_shared_shared_module__["a" /* SharedModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_router__["d" /* RouterModule */],
             ],
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_2__language_main_language_main_component__["a" /* LanguageMainComponent */],
-                __WEBPACK_IMPORTED_MODULE_4__language_category_category_list_component__["a" /* CategoryListComponent */],
-                __WEBPACK_IMPORTED_MODULE_5__category_table_category_table_component__["a" /* CategoryTableComponent */]
+                __WEBPACK_IMPORTED_MODULE_4__category_list_category_list_component__["a" /* CategoryListComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__category_table_category_table_component__["a" /* CategoryTableComponent */],
+                __WEBPACK_IMPORTED_MODULE_6__language_default_language_default_component__["a" /* LanguageDefaultComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__category_main_category_main_component__["a" /* CategoryMainComponent */]
             ]
         })
     ], LanguageModule);
@@ -525,6 +685,8 @@ var WebPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_shared_main_main_component__ = __webpack_require__("./src/app/shared/shared/main/main.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__contact_contact_contact_component__ = __webpack_require__("./src/app/contact/contact/contact.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__language_language_main_language_main_component__ = __webpack_require__("./src/app/language/language-main/language-main.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__language_language_default_language_default_component__ = __webpack_require__("./src/app/language/language-default/language-default.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__language_category_main_category_main_component__ = __webpack_require__("./src/app/language/category-main/category-main.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -536,12 +698,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var routes = [
     { path: 'main', component: __WEBPACK_IMPORTED_MODULE_2__shared_shared_main_main_component__["a" /* MainComponent */] },
     { path: 'MAIN', redirectTo: 'main' },
     { path: '', redirectTo: 'main', pathMatch: 'full' },
     { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_3__contact_contact_contact_component__["a" /* ContactComponent */] },
-    { path: 'language', component: __WEBPACK_IMPORTED_MODULE_4__language_language_main_language_main_component__["a" /* LanguageMainComponent */] },
+    { path: 'language', component: __WEBPACK_IMPORTED_MODULE_4__language_language_main_language_main_component__["a" /* LanguageMainComponent */], children: [
+            { path: '', component: __WEBPACK_IMPORTED_MODULE_5__language_language_default_language_default_component__["a" /* LanguageDefaultComponent */], pathMatch: 'full' },
+            { path: ':categoryId', component: __WEBPACK_IMPORTED_MODULE_6__language_category_main_category_main_component__["a" /* CategoryMainComponent */] },
+        ] },
     { path: 'LANGUAGE', redirectTo: 'language' },
     { path: '*', redirectTo: 'main' },
 ];
@@ -550,8 +717,8 @@ var RoutingModule = /** @class */ (function () {
     }
     RoutingModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* NgModule */])({
-            imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forRoot(routes)],
-            exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */]]
+            imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */].forRoot(routes)],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */]]
         })
     ], RoutingModule);
     return RoutingModule;
@@ -580,32 +747,68 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var CategoryRepository = /** @class */ (function () {
-    function CategoryRepository(restDateSource) {
-        this.restDateSource = restDateSource;
+    function CategoryRepository(dataSource) {
+        this.dataSource = dataSource;
         this.URL = "category";
     }
     CategoryRepository.prototype.getByWebPage = function (webPage) {
-        return this.restDateSource.get(this.URL)
+        return this.dataSource.get(this.URL)
             .switch()
             .filter(function (category) {
             return category.webPage.name.toUpperCase() == webPage.name.toUpperCase();
         });
     };
     CategoryRepository.prototype.getCategory = function (id) {
-        return this.restDateSource.get(this.URL)
+        return this.dataSource.get(this.URL)
             .switch()
             .filter(function (_category) {
             return _category.id == id;
         });
     };
     CategoryRepository.prototype.getCategories = function () {
-        return this.restDateSource.get(this.URL);
+        return this.dataSource.get(this.URL);
     };
     CategoryRepository = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__rest_datasource_service__["a" /* RestDatasource */]])
     ], CategoryRepository);
     return CategoryRepository;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/locale-resolver.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocaleResolver; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rest_datasource_service__ = __webpack_require__("./src/app/service/rest-datasource.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var LocaleResolver = /** @class */ (function () {
+    function LocaleResolver(dataSource) {
+        this.dataSource = dataSource;
+    }
+    LocaleResolver.prototype.getLocale = function () {
+        return this.dataSource.get('locale');
+    };
+    LocaleResolver = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__rest_datasource_service__["a" /* RestDatasource */]])
+    ], LocaleResolver);
+    return LocaleResolver;
 }());
 
 
@@ -669,12 +872,16 @@ var RestDatasource = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rest_datasource_service__ = __webpack_require__("./src/app/service/rest-datasource.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__webpage_repository_service__ = __webpack_require__("./src/app/service/webpage-repository.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__category_repository_service__ = __webpack_require__("./src/app/service/category-repository.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__locale_resolver_service__ = __webpack_require__("./src/app/service/locale-resolver.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__topic_repository_service__ = __webpack_require__("./src/app/service/topic-repository.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -688,12 +895,55 @@ var ServiceModule = /** @class */ (function () {
             imports: [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* HttpModule */]],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_2__rest_datasource_service__["a" /* RestDatasource */],
-                __WEBPACK_IMPORTED_MODULE_4__category_repository_service__["a" /* CategoryRepository */],
+                __WEBPACK_IMPORTED_MODULE_6__topic_repository_service__["a" /* TopicRepository */],
                 __WEBPACK_IMPORTED_MODULE_3__webpage_repository_service__["a" /* WebpageRepository */],
+                __WEBPACK_IMPORTED_MODULE_4__category_repository_service__["a" /* CategoryRepository */],
+                __WEBPACK_IMPORTED_MODULE_5__locale_resolver_service__["a" /* LocaleResolver */],
             ]
         })
     ], ServiceModule);
     return ServiceModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/topic-repository.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TopicRepository; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rest_datasource_service__ = __webpack_require__("./src/app/service/rest-datasource.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TopicRepository = /** @class */ (function () {
+    function TopicRepository(dataSource) {
+        this.dataSource = dataSource;
+    }
+    TopicRepository.prototype.getTopics = function () {
+        return this.dataSource.get('topic');
+    };
+    TopicRepository.prototype.getTopicsByCategory = function (category) {
+        if (category == null)
+            return null;
+        return this.dataSource.get("topic/category/" + category.id);
+    };
+    TopicRepository = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__rest_datasource_service__["a" /* RestDatasource */]])
+    ], TopicRepository);
+    return TopicRepository;
 }());
 
 
@@ -767,20 +1017,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var materials = [
     __WEBPACK_IMPORTED_MODULE_1__angular_flex_layout__["a" /* FlexLayoutModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MatProgressSpinnerModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MatSelectModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["l" /* MatTableModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MatTabsModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MatProgressBarModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MatSidenavModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MatProgressSpinnerModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MatSelectModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MatTableModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["n" /* MatTabsModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MatExpansionModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MatProgressBarModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MatSidenavModule */],
     __WEBPACK_IMPORTED_MODULE_2__angular_material__["a" /* MatButtonModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["n" /* MatToolbarModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["o" /* MatTooltipModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MatListModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MatFormFieldModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["d" /* MatInputModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MatMenuModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MatIconModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["o" /* MatToolbarModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MatTooltipModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MatListModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MatFormFieldModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MatInputModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MatMenuModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["d" /* MatIconModule */],
 ];
 var MaterialModule = /** @class */ (function () {
     function MaterialModule() {
@@ -905,7 +1156,7 @@ var LocatorComponent = /** @class */ (function () {
         var _this = this;
         this.router
             .events
-            .filter(function (event) { return event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* NavigationEnd */]; })
+            .filter(function (event) { return event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* NavigationEnd */]; })
             .subscribe(function (event) {
             _this.urlSegments = [];
             var url = event.url;
@@ -914,13 +1165,14 @@ var LocatorComponent = /** @class */ (function () {
     };
     LocatorComponent.prototype.extractSegments = function (url) {
         var _this = this;
-        url.split("/").forEach(function (_segement) {
-            console.log(_segement);
-            if (_segement != null && _segement != "") {
-                _this.urlSegments.push(_segement);
+        url.split("/").forEach(function (_segment) {
+            if (_segment.includes("?")) {
+                _segment = _segment.substr(0, _segment.indexOf("?"));
+            }
+            if (_segment != null && _segment != "") {
+                _this.urlSegments.push(_segment);
             }
         });
-        console.log(this.urlSegments);
     };
     LocatorComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -928,7 +1180,7 @@ var LocatorComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/shared/shared/header/locator/locator.component.html"),
             styles: [__webpack_require__("./src/app/shared/shared/header/locator/locator.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]])
     ], LocatorComponent);
     return LocatorComponent;
 }());
@@ -1099,7 +1351,7 @@ var SharedModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
                 __WEBPACK_IMPORTED_MODULE_3__material_material_module__["a" /* MaterialModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* RouterModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_router__["d" /* RouterModule */],
             ],
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_2__header_header_component__["a" /* HeaderComponent */],

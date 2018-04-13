@@ -13,6 +13,88 @@ import java.util.*;
 @Component
 public class FixtureFactory {
 
+    public static List<Topic> javascriptTopics(Category category, String hostname, int port) {
+        List<Topic> topics = new ArrayList<>();
+
+        Topic topic = new Topic();
+        topic.setName("JS 변수");
+        topic.setCategory(category);
+        topic.setDescription("영어로는 Variable로 (문자나 숫자 같은) 데이터를 담는 컨테이너다. 여기에 담겨진 데이터는 다른 데이터로 바꿀 수 있다. 변수는 마치 (사람이 쓰는 언어인) 자연어에서 대명사와 비슷한 역할을 한다.");
+
+        Map<String,String> codes = new HashMap<>();
+        codes.put("변수에 값을 대입","int a;\n" +
+                "a = 1;\n" +
+                "System.out.println(a+1); //2\n" +
+                " \n" +
+                "a = 2;\n" +
+                "System.out.println(a+1); //3");
+        Document document = new Document("변수의 선언과 할당",
+                "int a;\n" + "\n" + " \n" + "\n" + "위의 구문은 변수 a를 지금부터 사용하겠다고 변수를 선언한 것이다. 변수 a 앞에는 int라는 키워드가 있다. 이 키워드는 integer의 약자로 한국어로는 정수라는 의미다. 정수는 0을 중심으로 -1, -2, -3과 같은 음수와 1, 2, 3과 같은 양수를 통틀어서 정수라고 한다. 위의 코드는 변수 a가 정수를 담는 그릇임을 명시한 것이다. 이 변수를 사용하는 입장에서는 이 변수 안에 들어있는 데이터가 틀림 없이 정수라는 것을 확신 할 수 있게 된다.\n" + "\n" + "a = 1;\n" + "\n" + "좌항의 변수 a의 데이터가 1이라는 의미다. a에 숫자 1을 대입한 것이다. 이제부터 a 안에는 1이 들어있다. 이러한 것을 변수 a에 숫자 1을 할당했다고 한다.\n" + "\n" + "위의 실습 결과는 각각 2와 3이 출력될 것이다. 변수 a에 담겨 있는 값이 1일 때는 a+1의 결과가 2가 된다. 두번째 결과가 3이 된 것은 a의 값이 2로 바뀌었고, 2+1의 결과인 3이 출력된 것이다.",
+                codes);
+        topic.addDocument(document);
+
+        codes = new HashMap<>();
+        codes.put("실수에 값을 대입","double a = 1.1; \n" +
+                "System.out.println(a+1.1); // 2.2\n" +
+                " \n" +
+                "a = 2.1; \n" +
+                "System.out.println(a+1.1); // 3.2");
+        codes.put("실수에 값을 실패","" +
+                "int a = 1.1; \n" +
+                "System.out.println(a+1.1);");
+        document = new Document("실수",
+                "아래 예제는 실수를 담는 방법이다. (실습)\n" + "\n" + "1\n" + "2\n" + "3\n" + "4\n" + "5\n" + "double a = 1.1; \n" + "System.out.println(a+1.1); // 2.2\n" + " \n" + "a = 2.1; \n" + "System.out.println(a+1.1); // 3.2\n" + "이번에는 변수 a의 앞에 double이 붙었다. double이 붙으면 변수가 실수를 담는 그릇이라는 의미가 된다. 실수와 정수를 구분하기 어렵다면 정수는 소수점이 없는 수, 실수는 소수점이 있는 수라고 생각하자. 1은 정수이고, 1.1은 실수이다.\n" + "\n" + "인간이 고안한 최초의 숫자는 자연수였다. 자연수의 핵심은 헤아림이다. 가족이 몇명인지, 가축은 몇마리인지를 헤아라기 위해서 1, 2, 3과 같은 숫자가 고안되었다. 그 후에 등장한 것이 정수다. 정수의 핵심은 0이다. 일반적으로 0은 없다(無)의 의미가 강조 되지만 정수에서의 0은 기준점으로서의 0이다. 온도를 생각해보자. 0도는 단지 인간에게 가장 중요한 물질인 물이 얼기 시작하는 온도를 의미한다.",
+                codes);
+        topic.addDocument(document);
+
+        codes = new HashMap<>();
+        codes.put("문자열에 값을 대입","String first = \"coding\"; \n" +
+                "System.out.println(first+\" \"+\"everybody\");");
+        codes.put("String 변수","" +
+                "String a, b;\n" +
+                "a = \"coding\";\n" +
+                "b = \" everybody\";\n" +
+                "System.out.println(a+b);");
+        codes.put("자바스크립트에서 변수","" +
+                "a = 10;\n" +
+                "b = 22.2;\n" +
+                "alert(a+b);");
+        document = new Document("JS 문자열","변수의 한자는 變數이다. 즉 변할 수 있는 수라는 뜻이다. 하지만 한자의 의미와 다르게 프로그래밍에서의 변수에는 다양한 데이터 형이 담겨질 수 있다. 다음 예제는 변수의 값이 꼭  숫자가 와야 하는 것은 아니라는 것을 보여주기 위해서 만든 예제다. (실습)\n" + "\n" + "1\n" + "2\n" + "String first = \"coding\"; \n" + "System.out.println(first+\" \"+\"everybody\");\n" + "문자열을 변수에 담을 때는 위와 같이 변수의 이름 앞에 String을 붙여준다.\n" + "\n" + "아래와 같이 여러개의 변수(a,b)를 동시에 선언 할 수도 있다. (실습)\n" + "\n" + "1\n" + "2\n" + "3\n" + "4\n" + "String a, b;\n" + "a = \"coding\";\n" + "b = \" everybody\";\n" + "System.out.println(a+b);\n" + "다음은 자바스크립트에서 변수를 대입하는 장면이다. (실습)\n" + "\n" + "1\n" + "2\n" + "3\n" + "a = 10;\n" + "b = 22.2;\n" + "alert(a+b);\n" + "변수 a와 b에는 각각 정수와 실수가 입력되고 있다. 자바스크립트는 자바와 다르게 변수의 값으로 어떠한 값도 들어올 수 있다. 까다롭게 정수와 실수를 구분하지 않아도 된다. 이런 이유로 자바스크립트와 같은 언어는 배우고 사용하기가 쉽다. 정수와 실수의 개념을 몰라도 되기 때문이다. 하지만 변수 a만 보고는 변수 안에 정수가 들어있는지 숫자가 들어있는지 파악 할 수 있는 방법이 없다. 이것은 아래와 같은 문제를 야기할 수 있다.",
+                codes);
+        topic.addDocument(document);;
+
+        codes.put("변수를 왜쓰냐면","int a = 100;\n" +
+                "System.out.println(a + 10);\n" +
+                "System.out.println((a+ 10) / 10);\n" +
+                "System.out.println(((a + 10) / 10) - 10);\n" +
+                "System.out.println((((a + 10) / 10) - 10) * 10);");
+        codes.put("변수는 코드의 재활용성","System.out.println(100 + 10);\n" +
+                "System.out.println((100 + 10) / 10);\n" +
+                "System.out.println(((100 + 10) / 10) - 10);\n" +
+                "System.out.println((((100 + 10) / 10) - 10) * 10);");
+        document = new Document("변수가 없다면","변수는 코드의 재활용성을 높여준다. 예를 들어서 100에 10을 더하고, 10을 나눈 후에 다시 10을 빼고 거기에 10을 곱해야 한다고 치자. 그리고 각 단계마다 그 결과를 출력해야 한다면 코드는 아래와 같을 것이다.System.out.println(100 + 10);\n" + "System.out.println((100 + 10) / 10);\n" + "System.out.println(((100 + 10) / 10) - 10);\n" + "System.out.println((((100 + 10) / 10) - 10) * 10);",
+                codes);
+        topic.addDocument(document);
+
+        topic.setBasicTime(new BasicTime(LocalDateTime.of(2018,04,10,1,10,10), null));
+//            topic.setReferences(Arrays.asList(new URL("http", hostname, port, "/language/" )));
+        topics.add(topic);
+
+        topic = new Topic();
+        topic.setName("JS 주석과 세미콜론");
+        topic.setCategory(category);
+        topic.setDescription("주석(comment)은 로직에 대한 설명이나 코드를 비활성화 할 때 사용한다. 주석은 프로그래밍적으로 해석되지 않는다.");
+        topic.setDocuments(
+                Arrays.asList(
+                        new Document("한줄 주석","public static void main(String[] args) {\n" + "    // 두개의 변수가 같은 데이터 타입 일 때 아래와 같이 코드를 작성한다.\n" + "    String a, b;\n" + "}"),
+                        new Document("여러줄 주석","public static void main(String[] args) {\n" + "    String a, b;\n" + "    /*\n" + "    a = \"coding\";\n" + "    b = \"everybody\";\n" + "    System.out.println(a+b);\n" + "    */\n" + "}"),
+                        new Document("세미콜론","세미콜론은 문장(statement)의 끝을 의미한다. 자바에서는 문장의 끝에 세미콜론을 사용하지 않으면 컴파일 에러가 발생한다. \n" + "\n" + "1\n" + "2\n" + "3\n" + "4\n" + "5\n" + "6\n" + "7\n" + "8\n" + "// assignment statement\n" + "aValue = 8933.234;\n" + "// increment statement\n" + "aValue++;\n" + "// method invocation statement\n" + "System.out.println(\"Hello World!\");\n" + "// object creation statement\n" + "Bicycle myBike = new Bicycle();\n" + "세미콜론을 이용하면 여러개의 문장을 한줄에 표현할 수 있다.\n" + "\n" + "1\n" + "int a = 100; double b = 10.1;")));
+        topic.setBasicTime(new BasicTime(LocalDateTime.of(2018,4,10,7,10,32), null));
+        topics.add(topic);
+
+        return topics;
+    }
+
     public static List<Topic> javaTopics(Category category, String hostname, int port) {
         List<Topic> topics = new ArrayList<>();
 
@@ -20,13 +102,62 @@ public class FixtureFactory {
             topic.setName("변수");
             topic.setCategory(category);
             topic.setDescription("영어로는 Variable로 (문자나 숫자 같은) 데이터를 담는 컨테이너다. 여기에 담겨진 데이터는 다른 데이터로 바꿀 수 있다. 변수는 마치 (사람이 쓰는 언어인) 자연어에서 대명사와 비슷한 역할을 한다.");
-            topic.setDocuments(
-                    Arrays.asList(
-                            new Document("변수의 선언과 할당","int a;\n" + "\n" + " \n" + "\n" + "위의 구문은 변수 a를 지금부터 사용하겠다고 변수를 선언한 것이다. 변수 a 앞에는 int라는 키워드가 있다. 이 키워드는 integer의 약자로 한국어로는 정수라는 의미다. 정수는 0을 중심으로 -1, -2, -3과 같은 음수와 1, 2, 3과 같은 양수를 통틀어서 정수라고 한다. 위의 코드는 변수 a가 정수를 담는 그릇임을 명시한 것이다. 이 변수를 사용하는 입장에서는 이 변수 안에 들어있는 데이터가 틀림 없이 정수라는 것을 확신 할 수 있게 된다.\n" + "\n" + "a = 1;\n" + "\n" + "좌항의 변수 a의 데이터가 1이라는 의미다. a에 숫자 1을 대입한 것이다. 이제부터 a 안에는 1이 들어있다. 이러한 것을 변수 a에 숫자 1을 할당했다고 한다.\n" + "\n" + "위의 실습 결과는 각각 2와 3이 출력될 것이다. 변수 a에 담겨 있는 값이 1일 때는 a+1의 결과가 2가 된다. 두번째 결과가 3이 된 것은 a의 값이 2로 바뀌었고, 2+1의 결과인 3이 출력된 것이다."),
-                            new Document("실수","아래 예제는 실수를 담는 방법이다. (실습)\n" + "\n" + "1\n" + "2\n" + "3\n" + "4\n" + "5\n" + "double a = 1.1; \n" + "System.out.println(a+1.1); // 2.2\n" + " \n" + "a = 2.1; \n" + "System.out.println(a+1.1); // 3.2\n" + "이번에는 변수 a의 앞에 double이 붙었다. double이 붙으면 변수가 실수를 담는 그릇이라는 의미가 된다. 실수와 정수를 구분하기 어렵다면 정수는 소수점이 없는 수, 실수는 소수점이 있는 수라고 생각하자. 1은 정수이고, 1.1은 실수이다.\n" + "\n" + "인간이 고안한 최초의 숫자는 자연수였다. 자연수의 핵심은 헤아림이다. 가족이 몇명인지, 가축은 몇마리인지를 헤아라기 위해서 1, 2, 3과 같은 숫자가 고안되었다. 그 후에 등장한 것이 정수다. 정수의 핵심은 0이다. 일반적으로 0은 없다(無)의 의미가 강조 되지만 정수에서의 0은 기준점으로서의 0이다. 온도를 생각해보자. 0도는 단지 인간에게 가장 중요한 물질인 물이 얼기 시작하는 온도를 의미한다."),
-                            new Document("문자열","변수의 한자는 變數이다. 즉 변할 수 있는 수라는 뜻이다. 하지만 한자의 의미와 다르게 프로그래밍에서의 변수에는 다양한 데이터 형이 담겨질 수 있다. 다음 예제는 변수의 값이 꼭  숫자가 와야 하는 것은 아니라는 것을 보여주기 위해서 만든 예제다. (실습)\n" + "\n" + "1\n" + "2\n" + "String first = \"coding\"; \n" + "System.out.println(first+\" \"+\"everybody\");\n" + "문자열을 변수에 담을 때는 위와 같이 변수의 이름 앞에 String을 붙여준다.\n" + "\n" + "아래와 같이 여러개의 변수(a,b)를 동시에 선언 할 수도 있다. (실습)\n" + "\n" + "1\n" + "2\n" + "3\n" + "4\n" + "String a, b;\n" + "a = \"coding\";\n" + "b = \" everybody\";\n" + "System.out.println(a+b);\n" + "다음은 자바스크립트에서 변수를 대입하는 장면이다. (실습)\n" + "\n" + "1\n" + "2\n" + "3\n" + "a = 10;\n" + "b = 22.2;\n" + "alert(a+b);\n" + "변수 a와 b에는 각각 정수와 실수가 입력되고 있다. 자바스크립트는 자바와 다르게 변수의 값으로 어떠한 값도 들어올 수 있다. 까다롭게 정수와 실수를 구분하지 않아도 된다. 이런 이유로 자바스크립트와 같은 언어는 배우고 사용하기가 쉽다. 정수와 실수의 개념을 몰라도 되기 때문이다. 하지만 변수 a만 보고는 변수 안에 정수가 들어있는지 숫자가 들어있는지 파악 할 수 있는 방법이 없다. 이것은 아래와 같은 문제를 야기할 수 있다."),
-                            new Document("Null","변수는 코드의 재활용성을 높여준다. 예를 들어서 100에 10을 더하고, 10을 나눈 후에 다시 10을 빼고 거기에 10을 곱해야 한다고 치자. 그리고 각 단계마다 그 결과를 출력해야 한다면 코드는 아래와 같을 것이다.System.out.println(100 + 10);\n" + "System.out.println((100 + 10) / 10);\n" + "System.out.println(((100 + 10) / 10) - 10);\n" + "System.out.println((((100 + 10) / 10) - 10) * 10);"))
-            );
+
+            Map<String,String> codes = new HashMap<>();
+            codes.put("변수에 값을 대입","int a;\n" +
+                    "a = 1;\n" +
+                    "System.out.println(a+1); //2\n" +
+                    " \n" +
+                    "a = 2;\n" +
+                    "System.out.println(a+1); //3");
+            Document document = new Document("변수의 선언과 할당",
+                "int a;\n" + "\n" + " \n" + "\n" + "위의 구문은 변수 a를 지금부터 사용하겠다고 변수를 선언한 것이다. 변수 a 앞에는 int라는 키워드가 있다. 이 키워드는 integer의 약자로 한국어로는 정수라는 의미다. 정수는 0을 중심으로 -1, -2, -3과 같은 음수와 1, 2, 3과 같은 양수를 통틀어서 정수라고 한다. 위의 코드는 변수 a가 정수를 담는 그릇임을 명시한 것이다. 이 변수를 사용하는 입장에서는 이 변수 안에 들어있는 데이터가 틀림 없이 정수라는 것을 확신 할 수 있게 된다.\n" + "\n" + "a = 1;\n" + "\n" + "좌항의 변수 a의 데이터가 1이라는 의미다. a에 숫자 1을 대입한 것이다. 이제부터 a 안에는 1이 들어있다. 이러한 것을 변수 a에 숫자 1을 할당했다고 한다.\n" + "\n" + "위의 실습 결과는 각각 2와 3이 출력될 것이다. 변수 a에 담겨 있는 값이 1일 때는 a+1의 결과가 2가 된다. 두번째 결과가 3이 된 것은 a의 값이 2로 바뀌었고, 2+1의 결과인 3이 출력된 것이다.",
+                    codes);
+            topic.addDocument(document);
+
+            codes = new HashMap<>();
+            codes.put("실수에 값을 대입","double a = 1.1; \n" +
+                    "System.out.println(a+1.1); // 2.2\n" +
+                    " \n" +
+                    "a = 2.1; \n" +
+                    "System.out.println(a+1.1); // 3.2");
+            codes.put("실수에 값을 실패","" +
+                    "int a = 1.1; \n" +
+                    "System.out.println(a+1.1);");
+            document = new Document("실수",
+                        "아래 예제는 실수를 담는 방법이다. (실습)\n" + "\n" + "1\n" + "2\n" + "3\n" + "4\n" + "5\n" + "double a = 1.1; \n" + "System.out.println(a+1.1); // 2.2\n" + " \n" + "a = 2.1; \n" + "System.out.println(a+1.1); // 3.2\n" + "이번에는 변수 a의 앞에 double이 붙었다. double이 붙으면 변수가 실수를 담는 그릇이라는 의미가 된다. 실수와 정수를 구분하기 어렵다면 정수는 소수점이 없는 수, 실수는 소수점이 있는 수라고 생각하자. 1은 정수이고, 1.1은 실수이다.\n" + "\n" + "인간이 고안한 최초의 숫자는 자연수였다. 자연수의 핵심은 헤아림이다. 가족이 몇명인지, 가축은 몇마리인지를 헤아라기 위해서 1, 2, 3과 같은 숫자가 고안되었다. 그 후에 등장한 것이 정수다. 정수의 핵심은 0이다. 일반적으로 0은 없다(無)의 의미가 강조 되지만 정수에서의 0은 기준점으로서의 0이다. 온도를 생각해보자. 0도는 단지 인간에게 가장 중요한 물질인 물이 얼기 시작하는 온도를 의미한다.",
+                    codes);
+            topic.addDocument(document);
+
+            codes = new HashMap<>();
+            codes.put("문자열에 값을 대입","String first = \"coding\"; \n" +
+                    "System.out.println(first+\" \"+\"everybody\");");
+            codes.put("String 변수","" +
+                    "String a, b;\n" +
+                    "a = \"coding\";\n" +
+                    "b = \" everybody\";\n" +
+                    "System.out.println(a+b);");
+            codes.put("자바스크립트에서 변수","" +
+                    "a = 10;\n" +
+                    "b = 22.2;\n" +
+                    "alert(a+b);");
+            document = new Document("문자열","변수의 한자는 變數이다. 즉 변할 수 있는 수라는 뜻이다. 하지만 한자의 의미와 다르게 프로그래밍에서의 변수에는 다양한 데이터 형이 담겨질 수 있다. 다음 예제는 변수의 값이 꼭  숫자가 와야 하는 것은 아니라는 것을 보여주기 위해서 만든 예제다. (실습)\n" + "\n" + "1\n" + "2\n" + "String first = \"coding\"; \n" + "System.out.println(first+\" \"+\"everybody\");\n" + "문자열을 변수에 담을 때는 위와 같이 변수의 이름 앞에 String을 붙여준다.\n" + "\n" + "아래와 같이 여러개의 변수(a,b)를 동시에 선언 할 수도 있다. (실습)\n" + "\n" + "1\n" + "2\n" + "3\n" + "4\n" + "String a, b;\n" + "a = \"coding\";\n" + "b = \" everybody\";\n" + "System.out.println(a+b);\n" + "다음은 자바스크립트에서 변수를 대입하는 장면이다. (실습)\n" + "\n" + "1\n" + "2\n" + "3\n" + "a = 10;\n" + "b = 22.2;\n" + "alert(a+b);\n" + "변수 a와 b에는 각각 정수와 실수가 입력되고 있다. 자바스크립트는 자바와 다르게 변수의 값으로 어떠한 값도 들어올 수 있다. 까다롭게 정수와 실수를 구분하지 않아도 된다. 이런 이유로 자바스크립트와 같은 언어는 배우고 사용하기가 쉽다. 정수와 실수의 개념을 몰라도 되기 때문이다. 하지만 변수 a만 보고는 변수 안에 정수가 들어있는지 숫자가 들어있는지 파악 할 수 있는 방법이 없다. 이것은 아래와 같은 문제를 야기할 수 있다.",
+                    codes);
+            topic.addDocument(document);;
+
+            codes.put("변수를 왜쓰냐면","int a = 100;\n" +
+                    "System.out.println(a + 10);\n" +
+                    "System.out.println((a+ 10) / 10);\n" +
+                    "System.out.println(((a + 10) / 10) - 10);\n" +
+                    "System.out.println((((a + 10) / 10) - 10) * 10);");
+            codes.put("변수는 코드의 재활용성","System.out.println(100 + 10);\n" +
+                    "System.out.println((100 + 10) / 10);\n" +
+                    "System.out.println(((100 + 10) / 10) - 10);\n" +
+                    "System.out.println((((100 + 10) / 10) - 10) * 10);");
+            document = new Document("변수가 없다면","변수는 코드의 재활용성을 높여준다. 예를 들어서 100에 10을 더하고, 10을 나눈 후에 다시 10을 빼고 거기에 10을 곱해야 한다고 치자. 그리고 각 단계마다 그 결과를 출력해야 한다면 코드는 아래와 같을 것이다.System.out.println(100 + 10);\n" + "System.out.println((100 + 10) / 10);\n" + "System.out.println(((100 + 10) / 10) - 10);\n" + "System.out.println((((100 + 10) / 10) - 10) * 10);",
+                    codes);
+            topic.addDocument(document);
+
             topic.setBasicTime(new BasicTime(LocalDateTime.of(2018,04,10,1,10,10), null));
 //            topic.setReferences(Arrays.asList(new URL("http", hostname, port, "/language/" )));
             topics.add(topic);
@@ -92,7 +223,7 @@ public class FixtureFactory {
             Map<String,String> images = new HashMap<>();
             images.put("name","/assets/img/webpage/name.png");
             images.put("introduction","/assets/img/webpage/introduction.png");
-            images.put("greeting","/assets/img/webpage/greeting.png");
+            images.put("home.greeting","/assets/img/webpage/greeting.png");
             images.put("description","/assets/img/webpage/5555.png");
             images.put("aim","/assets/img/webpage/aim.png");
             images.put("help","/assets/img/webpage/help.png");
@@ -111,7 +242,7 @@ public class FixtureFactory {
             images = new HashMap<>();
             images.put("name","/assets/img/webpage/name.png");
             images.put("introduction","/assets/img/webpage/introduction.png");
-            images.put("greeting","/assets/img/webpage/greeting.png");
+            images.put("home.greeting","/assets/img/webpage/greeting.png");
             images.put("description","/assets/img/webpage/5555.png");
             images.put("aim","/assets/img/webpage/aim.png");
             images.put("help","/assets/img/webpage/help.png");

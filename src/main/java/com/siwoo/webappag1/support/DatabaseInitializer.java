@@ -45,6 +45,10 @@ public class DatabaseInitializer implements CommandLineRunner{
         Category java = categoryRepository.findByName("JAVA");
         List<Topic> topics = FixtureFactory.javaTopics(java, hostname, port);
         topicRepository.saveAll(topics);
-        topicRepository.findAll().forEach(topic -> log.warn(topic + ""));
+
+        Category javascript = categoryRepository.findByName("JAVASCRIPT");
+        topics = FixtureFactory.javascriptTopics(javascript, hostname, port);
+        topicRepository.saveAll(topics);
+
     }
 }

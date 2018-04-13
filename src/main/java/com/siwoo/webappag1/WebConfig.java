@@ -1,21 +1,19 @@
 package com.siwoo.webappag1;
 
-import com.siwoo.webappag1.converter.JsonLocalDateTimeSerializer;
+import org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
-import org.springframework.http.converter.cbor.MappingJackson2CborHttpMessageConverter;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 
-@Profile("prod")
 @Configuration
 public class WebConfig extends WebMvcConfigurationSupport {
 
@@ -33,5 +31,20 @@ public class WebConfig extends WebMvcConfigurationSupport {
     @Override
     protected void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
+    }
+
+    @Bean
+    ObjectFactoryCreatingFactoryBean visitorFactory() {
+        ObjectFactoryCreatingFactoryBean factoryCreatingFactoryBean = new ObjectFactoryCreatingFactoryBean();
+        factoryCreatingFactoryBean.setTargetBeanName("visitor");
+        return factoryCreatingFactoryBean;
+    }
+
+
+    @Override
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+        PageableHandlerMethodArgumentResolver resolver = new PageableHandlerMethodArgumentResolver();
+        argumentResolvers.add(resolver);
+        super.addArgumentResolvers(argumentResolvers);
     }
 }
