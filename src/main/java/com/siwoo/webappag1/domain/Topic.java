@@ -39,7 +39,7 @@ public class Topic {
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(
-            name="tbl_topic_references",
+            name="tbl_topic_refs",
             joinColumns = @JoinColumn(name="id"))
     @OrderColumn(name="col_idx")
     List<URL> references = new ArrayList<>();
