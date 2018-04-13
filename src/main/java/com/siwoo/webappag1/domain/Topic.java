@@ -15,7 +15,7 @@ import java.util.List;
 public class Topic {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "topic_id")
     private Long id;
     private String name;
     private String description;
@@ -40,8 +40,8 @@ public class Topic {
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(
             name="tbl_topic_refs",
-            joinColumns = @JoinColumn(name="id"))
-    @OrderColumn(name="col_idx")
+            joinColumns = @JoinColumn(name="topic_id"))
+    @OrderColumn(name="col_idxs")
     List<URL> references = new ArrayList<>();
 
     @Column(name ="topic_rate")
