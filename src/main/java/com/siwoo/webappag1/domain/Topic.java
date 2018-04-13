@@ -37,12 +37,6 @@ public class Topic {
     @JoinColumn(name="category_id")
     private Category category;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(
-            name="tbl_topic_refs",
-            joinColumns = @JoinColumn(name="topic_id"))
-    @OrderColumn(name="col_idxs")
-    List<String> references = new ArrayList<>();
 
     @Column(name ="topic_rate")
     private Double rate = 0.0;
