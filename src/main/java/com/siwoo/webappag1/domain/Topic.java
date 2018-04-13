@@ -42,7 +42,7 @@ public class Topic {
             name="tbl_topic_refs",
             joinColumns = @JoinColumn(name="topic_id"))
     @OrderColumn(name="col_idxs")
-    List<URL> references = new ArrayList<>();
+    List<String> references = new ArrayList<>();
 
     @Column(name ="topic_rate")
     private Double rate = 0.0;
