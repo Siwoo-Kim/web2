@@ -27,7 +27,7 @@ module.exports = "\r\n\r\nmat-sidenav-content {\r\n  overflow: hidden;\r\n}\r\n\
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<mat-sidenav-container>\n  <mat-sidenav #sidenav>\n    <div class=\"ui relaxed divided list mt-5\">\n      <div class=\"item\">\n        <i class=\"large github middle aligned icon\"></i>\n        <div class=\"content\">\n          <a class=\"header\">Semantic-Org/Semantic-UI</a>\n          <div class=\"description\">Updated 10 mins ago</div>\n        </div>\n      </div>\n      <div class=\"item\">\n        <i class=\"large github middle aligned icon\"></i>\n        <div class=\"content\">\n          <a class=\"header\">Semantic-Org/Semantic-UI-Docs</a>\n          <div class=\"description\">Updated 22 mins ago</div>\n        </div>\n      </div>\n      <div class=\"item\">\n        <i class=\"large github middle aligned icon\"></i>\n        <div class=\"content\">\n          <a class=\"header\">Semantic-Org/Semantic-UI-Meteor</a>\n          <div class=\"description\">Updated 34 mins ago</div>\n        </div>\n      </div>\n    </div>\n  </mat-sidenav>\n\n  <mat-sidenav-content>\n    <sw-header  (onToggleSidenav)=\"sidenav.toggle()\"></sw-header>\n    <main class=\"ui grid stackable\">\n      <router-outlet></router-outlet>\n    </main>\n  </mat-sidenav-content>\n\n</mat-sidenav-container>\n\n<div class=\"ui vertical bordered footer segment\">\n  <div class=\"ui center aligned container\">\n    <div class=\"ui stackable divided grid\">\n      <div class=\"three wide column\">\n        <h4 class=\"ui header\">Group 1</h4>\n        <div class=\"ui   list\">\n          <a href=\"#\" class=\"item\">Link One</a>\n          <a href=\"#\" class=\"item\">Link Two</a>\n          <a href=\"#\" class=\"item\">Link Three</a>\n          <a href=\"#\" class=\"item\">Link Four</a>\n        </div>\n      </div>\n      <div class=\"three wide column\">\n        <h4 class=\"ui header\">Group 2</h4>\n        <div class=\"ui  list\">\n          <a href=\"#\" class=\"item\">Link One</a>\n          <a href=\"#\" class=\"item\">Link Two</a>\n          <a href=\"#\" class=\"item\">Link Three</a>\n          <a href=\"#\" class=\"item\">Link Four</a>\n        </div>\n      </div>\n      <div class=\"three wide column\">\n        <h4 class=\"ui  header\">Group 3</h4>\n        <div class=\"ui   list\">\n          <a href=\"#\" class=\"item\">Link One</a>\n          <a href=\"#\" class=\"item\">Link Two</a>\n          <a href=\"#\" class=\"item\">Link Three</a>\n          <a href=\"#\" class=\"item\">Link Four</a>\n        </div>\n      </div>\n      <div class=\"seven wide column\">\n        <i class=\"icon huge angular\"></i>\n        <h3 class=\"header \">TryCode</h3>\n      </div>\n    </div>\n    <div class=\"ui  section divider\"></div>\n    <img src=\"/assets/img/logo/Java.png\" style=\"background-color:  #324194\" class=\"ui centered mini image\">\n    <div class=\"ui horizontal  small divided  list\">\n      <a class=\"item\" href=\"#\">Site Map</a>\n      <a class=\"item\" href=\"#\">Contact Us</a>\n      <a class=\"item\" href=\"#\">Terms and Conditions</a>\n      <a class=\"item\" href=\"#\">Privacy Policy</a>\n    </div>\n  </div>\n</div>\n"
+module.exports = "\n\n<mat-sidenav-container>\n  <mat-sidenav #sidenav>\n    <div class=\"ui relaxed divided list mt-5\">\n      <div class=\"item\">\n        <i class=\"large github middle aligned icon\"></i>\n        <div class=\"content\">\n          <a class=\"header\">Semantic-Org/Semantic-UI</a>\n          <div class=\"description\">Updated 10 mins ago</div>\n        </div>\n      </div>\n      <div class=\"item\">\n        <i class=\"large github middle aligned icon\"></i>\n        <div class=\"content\">\n          <a class=\"header\">Semantic-Org/Semantic-UI-Docs</a>\n          <div class=\"description\">Updated 22 mins ago</div>\n        </div>\n      </div>\n      <div class=\"item\">\n        <i class=\"large github middle aligned icon\"></i>\n        <div class=\"content\">\n          <a class=\"header\">Semantic-Org/Semantic-UI-Meteor</a>\n          <div class=\"description\">Updated 34 mins ago</div>\n        </div>\n      </div>\n      <div class=\"item\">\n        <div class=\"LI-profile-badge\"  data-version=\"v1\" data-size=\"medium\" data-locale=\"ko_KR\" data-type=\"vertical\" data-theme=\"dark\" data-vanity=\"si-woo-kim-3b701b14a\"><a class=\"LI-simple-link\" href='https://ca.linkedin.com/in/si-woo-kim-3b701b14a?trk=profile-badge'>Si-Woo Kim</a></div>\n      </div>\n    </div>\n  </mat-sidenav>\n\n  <mat-sidenav-content>\n    <sw-header  (onToggleSidenav)=\"sidenav.toggle()\"></sw-header>\n    <main class=\"ui grid stackable\">\n      <router-outlet ></router-outlet>\n    </main>\n  </mat-sidenav-content>\n\n</mat-sidenav-container>\n\n<div class=\"ui vertical bordered footer segment\">\n  <div class=\"ui center aligned container\">\n    <div class=\"ui stackable divided grid\">\n      <div class=\"three wide column\">\n        <h4 class=\"ui header\">Group 1</h4>\n        <div class=\"ui   list\">\n          <a href=\"#\" class=\"item\">Link One</a>\n          <a href=\"#\" class=\"item\">Link Two</a>\n          <a href=\"#\" class=\"item\">Link Three</a>\n          <a href=\"#\" class=\"item\">Link Four</a>\n        </div>\n      </div>\n      <div class=\"three wide column\">\n        <h4 class=\"ui header\">Group 2</h4>\n        <div class=\"ui  list\">\n          <a href=\"#\" class=\"item\">Link One</a>\n          <a href=\"#\" class=\"item\">Link Two</a>\n          <a href=\"#\" class=\"item\">Link Three</a>\n          <a href=\"#\" class=\"item\">Link Four</a>\n        </div>\n      </div>\n      <div class=\"three wide column\">\n        <h4 class=\"ui  header\">Group 3</h4>\n        <div class=\"ui   list\">\n          <a href=\"#\" class=\"item\">Link One</a>\n          <a href=\"#\" class=\"item\">Link Two</a>\n          <a href=\"#\" class=\"item\">Link Three</a>\n          <a href=\"#\" class=\"item\">Link Four</a>\n        </div>\n      </div>\n      <div class=\"seven wide column\">\n        <i class=\"icon huge angular\"></i>\n        <h3 class=\"header \">TryCode</h3>\n      </div>\n    </div>\n    <div class=\"ui  section divider\"></div>\n    <img src=\"/assets/img/logo/Java.png\" style=\"background-color:  #324194\" class=\"ui centered mini image\">\n    <div class=\"ui horizontal  small divided  list\">\n      <a class=\"item\" href=\"#\">Site Map</a>\n      <a class=\"item\" href=\"#\">Contact Us</a>\n      <a class=\"item\" href=\"#\">Terms and Conditions</a>\n      <a class=\"item\" href=\"#\">Privacy Policy</a>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -93,12 +93,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__contact_contact_module__ = __webpack_require__("./src/app/contact/contact.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_flex_layout__ = __webpack_require__("./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__language_language_module__ = __webpack_require__("./src/app/language/language.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__examples_first_step_first_step_module__ = __webpack_require__("./src/app/examples/first-step/first-step.module.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -130,6 +132,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__shared_material_material_module__["a" /* MaterialModule */],
                 __WEBPACK_IMPORTED_MODULE_10__routing_module__["a" /* RoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_11__contact_contact_module__["a" /* ContactModule */],
+                __WEBPACK_IMPORTED_MODULE_14__examples_first_step_first_step_module__["a" /* FirstStepModule */],
                 /*Core Module*/
                 __WEBPACK_IMPORTED_MODULE_12__angular_flex_layout__["a" /* FlexLayoutModule */],
                 __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
@@ -258,17 +261,521 @@ var ContactComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/examples/first-step/chapter1/first-step-chapter1.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FirstStepChapter1Module; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__welcome_msg_welcome_msg_component__ = __webpack_require__("./src/app/examples/first-step/chapter1/welcome-msg/welcome-msg.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__welcome_msg_select_language_select_language_component__ = __webpack_require__("./src/app/examples/first-step/chapter1/welcome-msg/select-language/select-language.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__service_i18n_support_service__ = __webpack_require__("./src/app/examples/first-step/chapter1/service/i18n-support.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_material_material_module__ = __webpack_require__("./src/app/shared/material/material.module.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+var FirstStepChapter1Module = /** @class */ (function () {
+    function FirstStepChapter1Module() {
+    }
+    FirstStepChapter1Module = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_7__shared_material_material_module__["a" /* MaterialModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormsModule */],
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_5__service_i18n_support_service__["a" /* I18nSupportService */],
+                { provide: __WEBPACK_IMPORTED_MODULE_6__angular_material__["b" /* MAT_DIALOG_DEFAULT_OPTIONS */], useValue: { hasBackdrop: false } }
+            ],
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__welcome_msg_welcome_msg_component__["b" /* WelcomeMsgComponent */],
+                __WEBPACK_IMPORTED_MODULE_4__welcome_msg_select_language_select_language_component__["a" /* SelectLanguageComponent */],
+                __WEBPACK_IMPORTED_MODULE_2__welcome_msg_welcome_msg_component__["a" /* GreetingPopup */],
+            ],
+            entryComponents: [__WEBPACK_IMPORTED_MODULE_2__welcome_msg_welcome_msg_component__["a" /* GreetingPopup */]]
+        })
+    ], FirstStepChapter1Module);
+    return FirstStepChapter1Module;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/chapter1/lang-metadata.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LANG_METADATA; });
+var LANG_METADATA = [
+    {
+        code: 'ko',
+        name: '한국어',
+        flagImgName: 'South_Korea.png',
+        msg: '안녕하세요'
+    },
+    {
+        code: 'en',
+        name: '영어',
+        flagImgName: 'United_States.png',
+        msg: 'Hello'
+    },
+    {
+        code: 'jp',
+        name: '일본어',
+        flagImgName: 'Japan.png',
+        msg: '初めまして'
+    },
+    {
+        code: 'fr',
+        name: '불어',
+        flagImgName: 'France.png',
+        msg: 'Bonjour'
+    },
+    {
+        code: 'cn',
+        name: '중국어',
+        flagImgName: 'China.png',
+        msg: '您好'
+    }
+];
+
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/chapter1/service/i18n-support.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return I18nSupportService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lang_metadata__ = __webpack_require__("./src/app/examples/first-step/chapter1/lang-metadata.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__("./node_modules/rxjs/_esm5/Subject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__ = __webpack_require__("./node_modules/rxjs/_esm5/Rx.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var I18nSupportService = /** @class */ (function () {
+    function I18nSupportService() {
+        this._currentCode = 'ko';
+        this.changeCode$ = new __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__["b" /* Subject */]();
+    }
+    Object.defineProperty(I18nSupportService.prototype, "currentCode", {
+        get: function () {
+            return this._currentCode;
+        },
+        set: function (code) {
+            var _this = this;
+            this.changeCode$.next(__WEBPACK_IMPORTED_MODULE_1__lang_metadata__["a" /* LANG_METADATA */].find(function (_language) { return _language.code === _this.currentCode; }));
+            this._currentCode = code;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    I18nSupportService.prototype.getLocaleMessage = function (userName) {
+        var _this = this;
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */]
+            .of(__WEBPACK_IMPORTED_MODULE_1__lang_metadata__["a" /* LANG_METADATA */].find(function (_language) { return _language.code === _this.currentCode; }))
+            .map(function (_language) {
+            console.log(_language);
+            return _language.msg + ", " + userName;
+        })
+            .first();
+    };
+    I18nSupportService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], I18nSupportService);
+    return I18nSupportService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/chapter1/welcome-msg/select-language/select-language.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "\r\n.language-card-header img {\r\n  border: 1px solid #d7d7e4;\r\n  width: 100px;\r\n  margin-right: 20px;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/chapter1/welcome-msg/select-language/select-language.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"language-select-container\"\n     fxLayout=\"row\"\n     fxLayoutGap=\"25px\"\n     fxLayoutGap.lt-md=\"0px\"\n     fxLayoutAlign=\"center center\"\n     style=\"margin-top: 10px\">\n  <mat-card\n    fxFlexOffset=\"15px\"\n    fxFlexOffset.lt-sm=\"0px\"\n    fxFlex.lt-sm=\"65\"\n    fxFlex=\"{100 / langMetaData.length + '%'}\"\n    fxFlexAlign=\"center center\"\n    *ngFor=\"let language of langMetaData\">\n    <mat-card-header class=\"language-card-header\">\n      <mat-card-title>\n        <img [src]=\"'/assets/img/first-step/' + language.flagImgName\">\n      </mat-card-title>\n      <mat-card-subtitle>\n        {{ language.name }} <mat-icon *ngIf=\"language.code === i18nSupportService.currentCode\">done</mat-icon>\n      </mat-card-subtitle>\n    </mat-card-header>\n    <mat-card-content>\n      <button mat-raised-button\n              (click)=\"i18nSupportService.currentCode = language.code\"\n              [disabled]=\"i18nSupportService.currentCode === language.code\">\n        Select\n      </button>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/chapter1/welcome-msg/select-language/select-language.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectLanguageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_i18n_support_service__ = __webpack_require__("./src/app/examples/first-step/chapter1/service/i18n-support.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lang_metadata__ = __webpack_require__("./src/app/examples/first-step/chapter1/lang-metadata.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SelectLanguageComponent = /** @class */ (function () {
+    function SelectLanguageComponent(i18nSupportService) {
+        this.i18nSupportService = i18nSupportService;
+        this.langMetaData = __WEBPACK_IMPORTED_MODULE_2__lang_metadata__["a" /* LANG_METADATA */];
+        this.langCode = this.i18nSupportService.currentCode;
+    }
+    SelectLanguageComponent.prototype.ngOnInit = function () {
+    };
+    SelectLanguageComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'sw-select-language',
+            template: __webpack_require__("./src/app/examples/first-step/chapter1/welcome-msg/select-language/select-language.component.html"),
+            styles: [__webpack_require__("./src/app/examples/first-step/chapter1/welcome-msg/select-language/select-language.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__service_i18n_support_service__["a" /* I18nSupportService */]])
+    ], SelectLanguageComponent);
+    return SelectLanguageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/chapter1/welcome-msg/welcome-msg.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "\r\n\r\nmat-expansion-panel {\r\n  -webkit-box-shadow : 0px 0px 0px\r\n  rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,0) !important;\r\n          box-shadow : 0px 0px 0px\r\n  rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,0) !important;\r\n}\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/chapter1/welcome-msg/welcome-msg.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<mat-card class=\"welcome-msg\"\n          fxLayoutGap=\"18px\"\n          fxLayout=\"column\"\n          fxLayoutAlign=\"center center\">\n  <mat-card-title>\n    <h1>International Greeting Page</h1>\n    <mat-divider [inset]=\"true\"></mat-divider>\n  </mat-card-title>\n  <div class=\"msg-header\" fxFlex=\"3\"  >\n    <mat-expansion-panel #panel [hideToggle]=\"true\" [disabled]=\"true\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          <h4>\n            Greeting! <span class=\"visitor-name\">{{ userName }}</span>.\n          </h4>\n        </mat-panel-title>\n      </mat-expansion-panel-header>\n      Exceed the limit\n      <button\n      style=\"margin-left: 5px\"\n      mat-raised-button\n      (click)=\"panel.expanded = false\">close</button>\n    </mat-expansion-panel>\n\n    <mat-divider [inset]=\"true\"></mat-divider>\n  </div>\n\n  <mat-chip-list fxFlex=\"2\">\n    <mat-chip  [(color)]=\"_color\" selected=\"true\">Current Choice {{code}}</mat-chip>\n  </mat-chip-list>\n  <div class=\"msg-content\" fxFlex=\"7\" fxLayout=\"column\">\n    <mat-form-field floatPlaceholder=\"auto\" fxFlex=\"60%\">\n      <input matInput\n             type=\"text\"\n             nameInput\n             [(ngModel)]=\"userName\"\n             (onModelChange)=\"validName()\"\n             required\n             placeholder=\"Name\">\n      <mat-hint>Enter your name</mat-hint>\n    </mat-form-field>\n    <button mat-raised-button\n            color=\"primary\"\n            fxFlex=\"40%\"\n            (click)=\"openDialog()\"\n    >Enter</button>\n  </div>\n\n  <sw-select-language></sw-select-language>\n</mat-card>\n\n\n"
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/chapter1/welcome-msg/welcome-msg.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return WelcomeMsgComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GreetingPopup; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__ = __webpack_require__("./node_modules/rxjs/_esm5/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_i18n_support_service__ = __webpack_require__("./src/app/examples/first-step/chapter1/service/i18n-support.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+var WelcomeMsgComponent = /** @class */ (function () {
+    function WelcomeMsgComponent(i18nSupportService, dialog) {
+        var _this = this;
+        this.i18nSupportService = i18nSupportService;
+        this.dialog = dialog;
+        this.valid = false;
+        this.code = 'NOT_SELECTED';
+        this._toggled = false;
+        this._color = this.toggleColor();
+        this.i18nSupportService.changeCode$.subscribe(function (_language) {
+            _this.code = _language.code;
+            _this.toggleColor();
+        });
+    }
+    WelcomeMsgComponent_1 = WelcomeMsgComponent;
+    WelcomeMsgComponent.prototype.setName = function (name) {
+        this.userName = name;
+    };
+    WelcomeMsgComponent.prototype.toggleColor = function () {
+        var color;
+        if (this._toggled) {
+            color = 'primary';
+        }
+        else {
+            color = 'accent';
+        }
+        this._toggled = !this._toggled;
+        this._color = color;
+    };
+    WelcomeMsgComponent.prototype.ngAfterViewInit = function () {
+        // let input$: Observable<any> = Observable.fromEvent(this.nameInput.nativeElement,'keyup');
+        // input$.map(event => event.target.value).subscribe(value => {
+        //   this.valid = this.validName(value);
+        //   console.log(this.valid);
+        // });
+        var _this = this;
+        setTimeout(function () {
+            if (_this.validName()) {
+                return;
+            }
+            else {
+                _this.expansionPanel.expanded = true;
+            }
+        }, WelcomeMsgComponent_1.LIMIT_TIME_INPUT);
+    };
+    WelcomeMsgComponent.prototype.validName = function () {
+        return this.userName != null && this.userName.length > 3;
+    };
+    WelcomeMsgComponent.prototype.openDialog = function () {
+        var _this = this;
+        this.i18nSupportService
+            .getLocaleMessage(this.userName == undefined ? 'Guest' : this.userName)
+            .subscribe(function (greeting) {
+            _this.dialog.open(GreetingPopup, {
+                data: {
+                    greeting: greeting,
+                },
+                width: '200px'
+            });
+        });
+    };
+    WelcomeMsgComponent.LIMIT_TIME_INPUT = 5000;
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* ViewChild */])('panel'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MatExpansionPanel */])
+    ], WelcomeMsgComponent.prototype, "expansionPanel", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* ViewChild */])('nameInput'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */])
+    ], WelcomeMsgComponent.prototype, "nameInput", void 0);
+    WelcomeMsgComponent = WelcomeMsgComponent_1 = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'sw-welcome-msg',
+            template: __webpack_require__("./src/app/examples/first-step/chapter1/welcome-msg/welcome-msg.component.html"),
+            styles: [__webpack_require__("./src/app/examples/first-step/chapter1/welcome-msg/welcome-msg.component.css")],
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__service_i18n_support_service__["a" /* I18nSupportService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MatDialog */]])
+    ], WelcomeMsgComponent);
+    return WelcomeMsgComponent;
+    var WelcomeMsgComponent_1;
+}());
+
+var GreetingPopup = /** @class */ (function () {
+    function GreetingPopup(data) {
+        this.data = data;
+    }
+    GreetingPopup = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'sw-greeting-popup',
+            template: "\n    <div class=\"container\"\n         fxLayoutGap=\"5px\"\n         fxLayout=\"column\" \n         style=\"text-align: center\"\n         fxLayoutAlign=\"center center\">\n      <h2 fxFlex=\"1\" mat-dialog-title>\n        {{ data.greeting }}!\n      </h2>\n      <mat-divider [inset]=\"true\"></mat-divider>\n      <mat-dialog-actions fxFlex=\"1\">\n        <button mat-raised-button color=\"primary\" [mat-dialog-close]=\"true\">Close</button>\n      </mat-dialog-actions>\n    </div>\n  "
+        }),
+        __param(0, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["a" /* MAT_DIALOG_DATA */])),
+        __metadata("design:paramtypes", [Object])
+    ], GreetingPopup);
+    return GreetingPopup;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/first-step-bootstrap/first-step-bootstrap.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ":host {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  margin: 25px;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/first-step-bootstrap/first-step-bootstrap.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<mat-card style=\"background-color: aliceblue;\">\n  <p >\n    Location: {{ paths }}\n  </p>\n</mat-card>\n<router-outlet></router-outlet>\n"
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/first-step-bootstrap/first-step-bootstrap.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FirstStepBootstrapComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FirstStepBootstrapComponent = /** @class */ (function () {
+    function FirstStepBootstrapComponent(route) {
+        var _this = this;
+        this.route = route;
+        route.url.subscribe(function (url) {
+            url.forEach(function (segment) { return _this.paths = "/" + segment; });
+        });
+    }
+    FirstStepBootstrapComponent.prototype.ngOnInit = function () {
+    };
+    FirstStepBootstrapComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'sw-first-step-bootstrap',
+            template: __webpack_require__("./src/app/examples/first-step/first-step-bootstrap/first-step-bootstrap.component.html"),
+            styles: [__webpack_require__("./src/app/examples/first-step/first-step-bootstrap/first-step-bootstrap.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]])
+    ], FirstStepBootstrapComponent);
+    return FirstStepBootstrapComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/first-step-routing.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FirstStepRoutingModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__first_step_bootstrap_first_step_bootstrap_component__ = __webpack_require__("./src/app/examples/first-step/first-step-bootstrap/first-step-bootstrap.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chapter1_welcome_msg_welcome_msg_component__ = __webpack_require__("./src/app/examples/first-step/chapter1/welcome-msg/welcome-msg.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var routes = [
+    {
+        path: 'first-step', component: __WEBPACK_IMPORTED_MODULE_2__first_step_bootstrap_first_step_bootstrap_component__["a" /* FirstStepBootstrapComponent */], children: [
+            { path: '', redirectTo: 'chapter1', pathMatch: 'full' },
+            { path: 'chapter1', component: __WEBPACK_IMPORTED_MODULE_3__chapter1_welcome_msg_welcome_msg_component__["b" /* WelcomeMsgComponent */] }
+        ]
+    }
+];
+var FirstStepRoutingModule = /** @class */ (function () {
+    function FirstStepRoutingModule() {
+    }
+    FirstStepRoutingModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* NgModule */])({
+            imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */].forChild(routes)],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */]],
+        })
+    ], FirstStepRoutingModule);
+    return FirstStepRoutingModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/examples/first-step/first-step.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FirstStepModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__first_step_bootstrap_first_step_bootstrap_component__ = __webpack_require__("./src/app/examples/first-step/first-step-bootstrap/first-step-bootstrap.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__first_step_routing_module__ = __webpack_require__("./src/app/examples/first-step/first-step-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chapter1_first_step_chapter1_module__ = __webpack_require__("./src/app/examples/first-step/chapter1/first-step-chapter1.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_material_material_module__ = __webpack_require__("./src/app/shared/material/material.module.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var FirstStepModule = /** @class */ (function () {
+    function FirstStepModule() {
+    }
+    FirstStepModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_5__shared_material_material_module__["a" /* MaterialModule */],
+                __WEBPACK_IMPORTED_MODULE_3__first_step_routing_module__["a" /* FirstStepRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_4__chapter1_first_step_chapter1_module__["a" /* FirstStepChapter1Module */],
+            ],
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__first_step_bootstrap_first_step_bootstrap_component__["a" /* FirstStepBootstrapComponent */]
+            ]
+        })
+    ], FirstStepModule);
+    return FirstStepModule;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/language/category-list/category-list.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "\r\nmat-nav-list {\r\n  margin-top: 40px;\r\n}\r\nmat-accordion {\r\n}\r\nmat-expansion-panel {\r\n  background: rgba(0,0,0,.03);\r\n  margin: 0;\r\n  text-align: left;\r\n  background: none;\r\n  border: none;\r\n\r\n}\r\n.category-list {\r\n  border-right: 2px solid #3f51b5;\r\n  padding-right: 25px;\r\n}\r\nbutton.mat-menu-item {\r\n  min-width: 250px;\r\n  width: 100%;\r\n}\r\n"
+module.exports = "\r\nmat-nav-list {\r\n  margin-top: 40px;\r\n}\r\nmat-accordion {\r\n}\r\nmat-expansion-panel {\r\n  background: rgba(0,0,0,.03);\r\n  margin: 0;\r\n  text-align: left;\r\n  background: none;\r\n  border: none;\r\n}\r\nmat-expansion-panel-header:before, mat-expansion-panel-header:after  {\r\n  background-color:  #efefef;\r\n}\r\n.category-list {\r\n  border-right: 2px solid #3f51b5;\r\n  padding-right: 25px;\r\n}\r\nbutton.mat-menu-item {\r\n  min-width: 250px;\r\n  width: 100%;\r\n}\r\n"
 
 /***/ }),
 
 /***/ "./src/app/language/category-list/category-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-accordion  >\n  <mat-expansion-panel\n    *ngFor=\"let category of categories\"\n    (opened)=\"panelOpenState = true\"\n    (closed)=\"panelOpenState = false\">\n    <mat-expansion-panel-header style=\"text-align: center\">\n      <mat-panel-title>\n        {{ category?.name }}\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n    <mat-list>\n      <mat-list-item>\n        <a [routerLink]=\"['/language',category.name]\" [queryParams]=\"{categoryId: category.id }\">{{ category.name }} Overview</a>\n      </mat-list-item>\n      <mat-list-item *ngFor=\"let topic of category?.topics\">\n        <a [routerLink]=\"['/language',category.name]\" >{{ topic?.name }}</a>\n      </mat-list-item>\n    </mat-list>\n  </mat-expansion-panel>\n</mat-accordion>\n"
+module.exports = "<mat-accordion  >\n  <mat-expansion-panel\n    *ngFor=\"let category of categories\"\n    (opened)=\"panelOpenState = true\"\n    (closed)=\"panelOpenState = false\">\n    <mat-expansion-panel-header style=\"text-align: center\">\n      <mat-panel-title>\n        {{ category?.name }}\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n    <mat-list>\n      <mat-list-item>\n        <a [routerLink]=\"['/language',category.name]\"\n           [queryParams]=\"{categoryId: category.id }\">\n          {{ category.name }} Overview\n        </a>\n      </mat-list-item>\n      <mat-list-item *ngFor=\"let topic of category?.topics\">\n        <a [routerLink]=\"['/language','topic']\"\n           [queryParams]=\"{topicId: topic.id }\" >\n          {{ topic?.name }}\n        </a>\n      </mat-list-item>\n    </mat-list>\n  </mat-expansion-panel>\n</mat-accordion>\n"
 
 /***/ }),
 
@@ -336,14 +843,14 @@ var CategoryListComponent = /** @class */ (function () {
 /***/ "./src/app/language/category-main/category-main.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n\r\nmat-tab-header {\r\n  min-width: 72px;\r\n}\r\n"
+module.exports = "\r\n\r\nmat-tab-header {\r\n  min-width: 72px;\r\n  opacity: .6;\r\n  font-weight: bolder;\r\n}\r\n\r\n:host {\r\n  width: 100%;\r\n}\r\n\r\n.ui.text.main {\r\n  margin: 25px 15px 15px !important;\r\n  padding: 55px;\r\n\r\n}\r\n\r\n.ui.container{\r\n  margin: 15px;\r\n  margin-top: 45px;\r\n  margin-bottom: 45px;\r\n  -webkit-tap-highlight-color: transparent;\r\n}\r\n\r\nh1.ui.header {\r\n  margin: 5rem 1rem 3rem;\r\n}\r\n\r\n.ui.container p{\r\n  font-size: 16px !important;\r\n  line-height: 28px!important;\r\n  margin: 15px!important;\r\n}\r\n\r\nh1 > mat-divider {\r\n  width: 50px;\r\n}\r\n\r\nspan > mat-divider {\r\n  width: 125px;\r\n}\r\n\r\n.meta {\r\n  padding-top: 45px !important;\r\n  display: inline-block;\r\n  font-size: .85714286em;\r\n  margin: .5em 0 0;\r\n  background: 0 0;\r\n  border: none;\r\n  border-radius: 0;\r\n  -webkit-box-shadow: none;\r\n  box-shadow: none;\r\n  padding: 0;\r\n  color: rgba(0,0,0,.6);\r\n}\r\n"
 
 /***/ }),
 
 /***/ "./src/app/language/category-main/category-main.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div  style=\"width: 100%\" fxLayoutAlign=\"center center\" style=\"margin: 45px;\">\n  <div class=\"tab-container\" >\n    <mat-tab-group [dynamicHeight]=\"false\">\n      <mat-tab >\n        <ng-template mat-tab-label >\n          <h1 class=\"ui header\">\n            Overview\n          </h1>\n        </ng-template>\n        <div class=\"ui text column text-content-wrapper mt-5\">\n          <h4 class=\"ui header\" >\n            <i class=\"tag icon\"></i>\n            {{ category?.name }}\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui left floated header\" style=\"padding-left: 40px !important;\"> {{ category?.name }} 이란? </h2>\n          <p>\n            {{ category?.description }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            Introduction\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui right floated header\"> {{category?.name}}의 수업은? </h2>\n          <p>\n            {{ category?.introduction }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            난이도\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui right floated header\"> 얼마나 어려워요? </h2>\n          <p>\n            {{ category?.level }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            사전 공부\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui left floated header\"> 전에 뭘 공부해야되죠?</h2>\n          <p>\n            {{ category?.prerequisite }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            Help\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui left floated header\"> 도움은 ?</h2>\n          <p>\n            {{ category?.url }}\n          </p>\n        </div>\n      </mat-tab>\n      <mat-tab >\n        <ng-template mat-tab-label >\n          <h1 class=\"ui header\">\n            Code\n          </h1>\n        </ng-template>\n        <div class=\"ui text column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\" >\n            <i class=\"tag icon\"></i>\n            Welcome to TryCode\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui left floated header\" style=\"padding-left: 40px !important;\"> {{ webpage?.name }}</h2>\n          <p>\n            {{ webpage?.greeting }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            Introduction\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui right floated header\"> 이 페이지는 ? </h2>\n          <p>\n            {{ webpage?.introduction }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            Aim\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui left floated header\"> 설명 좀 해봐 ?</h2>\n          <p>\n            {{ webpage?.description }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            Aim\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui right floated header\"> 그래서 어떻게 되는데 ?</h2>\n          <p>\n            {{ webpage?.aim }}\n          </p>\n        </div>\n        <div class=\"ui text p-5 column text-content-wrapper\">\n          <h4 class=\"ui horizontal divider header\">\n            <i class=\"tag icon\"></i>\n            Help\n          </h4>\n          <img class=\"ui small fluid centered image\" src=\"/assets/img/5641.png\">\n          <h2 class=\"ui left floated header\"> 도움은 ?</h2>\n          <p>\n            {{ webpage?.help }}\n          </p>\n        </div>\n      </mat-tab>\n    </mat-tab-group>\n  </div>\n</div>\n"
+module.exports = "\n<div class=\"ui text main\" fxLayout=\"row\" fxFill fxLayoutGap=\"15px\" >\n    <mat-tab-group fxFlex=\"100%\" >\n      <mat-tab label=\"Overview\" >\n        <div class=\"ui container\"  >\n          <div class=\"content-header large ui feed\" fxLayout=\"row\" fxLayoutGap=\"15px\">\n            <h1 class=\"mt-3 ui header\">\n              {{ category?.name }}  &nbsp;\n              <mat-divider [inset]=\"true\"></mat-divider>\n              <span><i class=\"fitted icon code\"></i>\n              <mat-divider></mat-divider>\n              </span>\n            </h1>\n            <div class=\"meta\">\n              <div class=\"date\">\n                {{ category?.basicTime.updated }}\n              </div>\n              <a class=\"like\">\n                <i class=\"like icon\"></i> 4 Likes\n              </a>\n            </div>\n          </div>\n          <p >\n            {{ category?.introduction }}\n          </p>\n        </div>\n        <div class=\"ui container\">\n          <h1 class=\"mt-3 ui header\">\n            Description  &nbsp;\n            <mat-divider [inset]=\"true\"></mat-divider>\n            <span><i class=\"fitted icon code\"></i>\n            <mat-divider></mat-divider>\n          </span>\n          </h1>\n          <p>\n            {{ category?.description }}\n          </p>\n        </div>\n        <div class=\"ui container\">\n          <h1 class=\"mt-3 ui header\">\n            Level  &nbsp;\n            <mat-divider [inset]=\"true\"></mat-divider>\n            <span><i class=\"fitted icon code\"></i>\n            <mat-divider></mat-divider>\n          </span>\n          </h1>\n          <p style=\"font-size: 16px;line-height: 28px;\">\n            {{ category?.level }}\n          </p>\n        </div>\n      </mat-tab>\n      <mat-tab label=\"{{ topic?.name }}\" *ngIf=\"!isOverview\">\n        <div class=\"ui container\"  >\n          <div class=\"content-header large ui feed\" fxLayout=\"row\" fxLayoutGap=\"15px\">\n            <h1 class=\"mt-3 ui header\">\n              {{ topic?.name }}  &nbsp;\n              <mat-divider [inset]=\"true\"></mat-divider>\n              <span><i class=\"fitted icon code\"></i>\n              <mat-divider></mat-divider>\n              </span>\n            </h1>\n            <div class=\"meta\">\n              <div class=\"date\">\n                {{ category?.basicTime.updated }}\n              </div>\n              <a class=\"like\">\n                <i class=\"like icon\"></i> 4 Likes\n              </a>\n            </div>\n          </div>\n          <p>\n            {{ topic?.description }}\n          </p>\n        </div>\n      </mat-tab>\n    </mat-tab-group>\n</div>\n"
 
 /***/ }),
 
@@ -355,6 +862,7 @@ module.exports = "\n<div  style=\"width: 100%\" fxLayoutAlign=\"center center\" 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_category_repository_service__ = __webpack_require__("./src/app/service/category-repository.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_topic_repository_service__ = __webpack_require__("./src/app/service/topic-repository.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -367,17 +875,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CategoryMainComponent = /** @class */ (function () {
-    function CategoryMainComponent(route, categoryRepository) {
+    function CategoryMainComponent(route, categoryRepository, topicRepository) {
         var _this = this;
         this.route = route;
         this.categoryRepository = categoryRepository;
+        this.topicRepository = topicRepository;
+        this.isOverview = false;
         this.route.queryParams.subscribe(function (params) {
+            console.log(params);
             _this.categoryId = params['categoryId'];
-            _this.categoryRepository.getCategory(_this.categoryId).subscribe(function (_category) {
-                _this.category = _category;
-                console.log(_this.category);
-            });
+            if (_this.categoryId) {
+                _this.isOverview = true;
+                _this.categoryRepository.getCategory(_this.categoryId).subscribe(function (_category) {
+                    _this.category = _category;
+                    console.log(_this.category);
+                });
+            }
+            else {
+                _this.isOverview = false;
+                _this.topicId = params['topicId'];
+                _this.topicRepository.getTopic(_this.topicId).subscribe(function (_topic) {
+                    _this.topic = _topic;
+                    console.log(_this.topic);
+                    _this.categoryRepository.getCategoryByTopic(_this.topic).subscribe(function (_category) {
+                        _this.category = _category;
+                    });
+                });
+            }
         });
     }
     CategoryMainComponent.prototype.ngOnInit = function () {
@@ -390,7 +916,8 @@ var CategoryMainComponent = /** @class */ (function () {
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* ViewEncapsulation */].None,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__service_category_repository_service__["a" /* CategoryRepository */]])
+            __WEBPACK_IMPORTED_MODULE_2__service_category_repository_service__["a" /* CategoryRepository */],
+            __WEBPACK_IMPORTED_MODULE_3__service_topic_repository_service__["a" /* TopicRepository */]])
     ], CategoryMainComponent);
     return CategoryMainComponent;
 }());
@@ -446,7 +973,7 @@ var CategoryTableComponent = /** @class */ (function () {
         this.categoryRepository.getByWebPage(this.webPage)
             .subscribe(function (data) {
             _this.categories.push(data);
-            _this.dataSource = new __WEBPACK_IMPORTED_MODULE_1__angular_material__["l" /* MatTableDataSource */](_this.categories);
+            _this.dataSource = new __WEBPACK_IMPORTED_MODULE_1__angular_material__["t" /* MatTableDataSource */](_this.categories);
         });
     };
     CategoryTableComponent.prototype.applyFilter = function (filterValue) {
@@ -537,14 +1064,14 @@ var LanguageDefaultComponent = /** @class */ (function () {
 /***/ "./src/app/language/language-main/language-main.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "a {\r\n  text-align: center;\r\n}\r\n\r\n:host {\r\n  min-height: 900px;\r\n}\r\n"
+module.exports = "a {\r\n  text-align: center;\r\n}\r\n\r\n:host {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  min-height: 900px;\r\n}\r\n\r\n.language-main-container {\r\n  margin-top: 20px;\r\n}\r\n\r\nsw-category-list {\r\n  padding-left: 15px;margin-top: 30px;\r\n}\r\n"
 
 /***/ }),
 
 /***/ "./src/app/language/language-main/language-main.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<sw-spinner [hide]=\"dataLoaded\"></sw-spinner>\n<div fxLayout style=\"margin-top: 20px\">\n  <sw-category-list *ngIf=\"webPage\"\n                    [webPage]=\"webPage\"\n                    fxFlex=\"20%\"\n                    style=\"padding-left: 15px;margin-top: 30px\"\n                    fxShow.lt-md=\"false\"></sw-category-list>\n  <div fxFlex=\"75%\" fxFlex.lt-md=\"100%\"  >\n    <router-outlet ></router-outlet>\n  </div>\n</div>\n"
+module.exports = "\n<sw-spinner  [hide]=\"dataLoaded\"></sw-spinner>\n<div class=\"language-main-container\" fxLayout=\"row\" fxFlex>\n  <sw-category-list\n    fxFlex=\"0 0 18\"\n    *ngIf=\"webPage\"\n    fxHide.lt-sm=\"true\"\n    [webPage]=\"webPage\">\n  </sw-category-list>\n  <div fxFlex=\"0 0 85\" >\n  <router-outlet ></router-outlet>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -707,10 +1234,11 @@ var routes = [
     { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_3__contact_contact_contact_component__["a" /* ContactComponent */] },
     { path: 'language', component: __WEBPACK_IMPORTED_MODULE_4__language_language_main_language_main_component__["a" /* LanguageMainComponent */], children: [
             { path: '', component: __WEBPACK_IMPORTED_MODULE_5__language_language_default_language_default_component__["a" /* LanguageDefaultComponent */], pathMatch: 'full' },
+            { path: 'topic/:topicName', component: __WEBPACK_IMPORTED_MODULE_6__language_category_main_category_main_component__["a" /* CategoryMainComponent */] },
             { path: ':categoryId', component: __WEBPACK_IMPORTED_MODULE_6__language_category_main_category_main_component__["a" /* CategoryMainComponent */] },
+            { path: '**', redirectTo: '' }
         ] },
     { path: 'LANGUAGE', redirectTo: 'language' },
-    { path: '*', redirectTo: 'main' },
 ];
 var RoutingModule = /** @class */ (function () {
     function RoutingModule() {
@@ -767,6 +1295,9 @@ var CategoryRepository = /** @class */ (function () {
     };
     CategoryRepository.prototype.getCategories = function () {
         return this.dataSource.get(this.URL);
+    };
+    CategoryRepository.prototype.getCategoryByTopic = function (topic) {
+        return this.dataSource.get(this.URL + "/topic/" + topic.id);
     };
     CategoryRepository = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
@@ -939,6 +1470,12 @@ var TopicRepository = /** @class */ (function () {
             return null;
         return this.dataSource.get("topic/category/" + category.id);
     };
+    TopicRepository.prototype.getTopicByName = function (param) {
+        return undefined;
+    };
+    TopicRepository.prototype.getTopic = function (topicId) {
+        return this.dataSource.get("topic/" + topicId).first();
+    };
     TopicRepository = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__rest_datasource_service__["a" /* RestDatasource */]])
@@ -1017,21 +1554,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var materials = [
     __WEBPACK_IMPORTED_MODULE_1__angular_flex_layout__["a" /* FlexLayoutModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MatProgressSpinnerModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MatSelectModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MatTableModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["n" /* MatTabsModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MatExpansionModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MatProgressBarModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MatSidenavModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["a" /* MatButtonModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["o" /* MatToolbarModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MatTooltipModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MatListModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MatFormFieldModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MatInputModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MatMenuModule */],
-    __WEBPACK_IMPORTED_MODULE_2__angular_material__["d" /* MatIconModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MatProgressSpinnerModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["r" /* MatSelectModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["u" /* MatTableModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["v" /* MatTabsModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MatExpansionModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MatProgressBarModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatSidenavModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MatButtonModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["w" /* MatToolbarModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["x" /* MatTooltipModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["n" /* MatListModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MatFormFieldModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MatInputModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["o" /* MatMenuModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MatDividerModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["d" /* MatCardModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["l" /* MatIconModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MatDialogModule */],
+    __WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MatChipsModule */],
 ];
 var MaterialModule = /** @class */ (function () {
     function MaterialModule() {
@@ -1059,7 +1600,7 @@ module.exports = "#nav-header {\r\n  background: #3f51b5;\r\n  -webkit-box-shado
 /***/ "./src/app/shared/shared/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"center center\" >\n  <mat-toolbar color=\"primary\" id=\"nav-header\" fxFlex=\"60%\">\n    <button mat-icon-button>\n      <i class=\"nav-anchor ui icon angular large\" ></i>\n    </button>\n    <button mat-icon-button (click)=\"toggleSidenav()\">\n      <mat-icon class=\"nav-anchor\" style=\"color: white;\">list</mat-icon>\n    </button>\n    <ul class=\"navigation-list\" fxShow.lt-sm=\"false\">\n      <mat-nav-list >\n        <li mat-list-item *ngFor=\"let name of webpageNames\" ><a mat-raised-button routerLink=\"{{'/' + name}}\" color=\"primary\">{{ name }}</a></li>\n        <li mat-list-item >\n          <button mat-raised-button color=\"primary\" [matMenuTriggerFor]=\"menu\">Lecture</button>\n        </li>\n        <mat-menu #menu=\"matMenu\">\n          <button mat-menu-item>\n            <mat-icon color=\"primary\">android</mat-icon>\n            <span>JAVA</span>\n          </button>\n          <button mat-menu-item>\n            <mat-icon color=\"primary\">language-javascript</mat-icon>\n            <span>JAVSCRIPT</span>\n          </button>\n        </mat-menu>\n      </mat-nav-list>\n    </ul>\n  </mat-toolbar>\n  <sw-locator fxFlex=\"60%\"></sw-locator>\n</div>\n"
+module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"center center\" >\n  <mat-toolbar color=\"primary\" id=\"nav-header\" fxFlex=\"60%\">\n    <button mat-icon-button>\n      <i class=\"nav-anchor ui icon angular large\" ></i>\n    </button>\n    <button mat-icon-button (click)=\"toggleSidenav()\">\n      <mat-icon class=\"nav-anchor\" style=\"color: white;\">list</mat-icon>\n    </button>\n    <ul class=\"navigation-list\" fxShow.lt-sm=\"false\">\n      <mat-nav-list >\n        <li mat-list-item *ngFor=\"let name of webpageNames\" ><a mat-raised-button routerLink=\"{{'/' + name}}\" color=\"primary\">{{ name }}</a></li>\n        <li mat-list-item >\n          <button mat-raised-button color=\"primary\" [matMenuTriggerFor]=\"menu\">Lecture</button>\n        </li>\n        <mat-menu #menu=\"matMenu\">\n          <button mat-menu-item>\n            <mat-icon color=\"primary\">android</mat-icon>\n            <span>JAVA</span>\n          </button>\n          <button mat-menu-item>\n            <mat-icon color=\"primary\">language-javascript</mat-icon>\n            <span>JAVSCRIPT</span>\n          </button>\n        </mat-menu>\n      </mat-nav-list>\n    </ul>\n    <a mat-raised-button  matTooltip=\"Example Codes!\" routerLink=\"first-step\" color=\"primary\">\n      First Step\n    </a>\n  </mat-toolbar>\n  <sw-locator fxFlex=\"60%\"></sw-locator>\n</div>\n"
 
 /***/ }),
 
@@ -1170,7 +1711,7 @@ var LocatorComponent = /** @class */ (function () {
                 _segment = _segment.substr(0, _segment.indexOf("?"));
             }
             if (_segment != null && _segment != "") {
-                _this.urlSegments.push(_segment);
+                _this.urlSegments.push(decodeURI(_segment));
             }
         });
     };

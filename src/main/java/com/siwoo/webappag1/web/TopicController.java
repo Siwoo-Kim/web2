@@ -41,4 +41,9 @@ public class TopicController {
         return  topicRepository.findAll();
     }
 
+    @GetMapping("/{id}")
+    public Topic byId(@PathVariable("id") Long id) {
+        System.out.println("Handled");
+        return this.topicRepository.findById(id).get();
+    }
 }
